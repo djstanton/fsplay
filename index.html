@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Catch the Egg | Ну, погоди!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+
+<div class="fs-game">
+    <div class="fs-game-bg">
+
+        <div class="sale-banner" data-id="1" data-position="0"></div>
+        <div class="sale-banner" data-id="2" data-position="0"></div>
+        <div class="sale-banner" data-id="3" data-position="0"></div>
+
+        <div class="coin" data-id="0" data-is-animated="0">
+            <div class="coin-hp"></div>
+        </div>
+
+        <div class="coin" data-id="1" data-is-animated="0">
+            <div class="coin-hp"></div>
+        </div>
+
+        <div class="coin" data-id="2" data-is-animated="0">
+            <div class="coin-hp"></div>
+        </div>
+
+        <div class="coin" data-id="3" data-is-animated="0">
+            <div class="coin-hp"></div>
+        </div>
+
+        <div class="coin" data-id="4" data-is-animated="0">
+            <div class="coin-hp"></div>
+        </div>
+
+        <div class="coin" data-id="5" data-is-animated="0">
+            <div class="coin-hp"></div>
+        </div>
+
+        <div class="coin" data-id="6" data-is-animated="0">
+            <div class="coin-hp"></div>
+        </div>
+
+        <div class="coin" data-id="7" data-is-animated="0">
+            <div class="coin-hp"></div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // For coin test
+    ( function() {
+        var coins = document.getElementsByClassName('coin');
+
+        for ( var i = 0; i < coins.length; i++ ) {
+
+            coins[ i ].addEventListener( 'click', (function( lockedInIndex ){
+                return function(e){
+                    e.preventDefault();
+                    this.setAttribute('data-is-animated', '1');
+
+                    setTimeout( function(){
+                        this.setAttribute('data-is-animated', '0')
+                    }.bind(this), 5000);
+                };
+            })( i ), 'false' );
+        }
+    })();
+
+</script>
+
+
+<script src="js/fsgame.js"></script>
+
+</body>
+</html>
