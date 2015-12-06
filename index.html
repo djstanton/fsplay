@@ -4,9 +4,26 @@
     <meta charset="utf-8">
     <title>Catch the Egg | Ну, погоди!</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/phrase-generator.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 </head>
 <body>
+
+<div id="phrase" class="phrase" data-is-animated="0">
+    <div id="phrase-text" class="phrase-text">
+
+    </div>
+
+    <div class="phrase-corner">
+        <div class="phrase-corner-hp phrase-corner-hp1"></div>
+        <div class="phrase-corner-hp phrase-corner-hp2"></div>
+        <div class="phrase-corner-hp phrase-corner-hp3"></div>
+    </div>
+
+</div>
+
+
 
 <div class="fs-game">
     <div class="fs-game-bg">
@@ -16,7 +33,7 @@
         <div class="sale-banner" data-id="3" data-position="0"></div>
 
 
-        <div class="coin" data-id="0" data-is-animated="0" data-is-caught="1" data-is-bomb="1">
+        <div class="coin" data-id="0" data-is-animated="0" data-is-caught="0" data-is-bomb="1">
             <div class="coin-hp1">
                 <div class="coin-hp2"></div>
 
@@ -50,7 +67,7 @@
             </div>
         </div>
 
-        <div class="coin" data-id="2" data-is-animated="0" data-is-caught="1" data-is-bomb="0">
+        <div class="coin" data-id="2" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
             <div class="coin-hp1">
                 <div class="coin-hp2"></div>
 
@@ -162,7 +179,7 @@
                 return function(e){
                     e.preventDefault();
                     this.setAttribute('data-is-animated', '1');
-
+                    phraseGenerator.showPhrase('good');
 
                     setTimeout( function(){
                         this.setAttribute('data-is-animated', '0');
@@ -181,6 +198,7 @@
 
 
 <script src="js/fsgame.js"></script>
+<script src="js/phrase-generator.js"></script>
 
 </body>
 </html>

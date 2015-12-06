@@ -1,0 +1,110 @@
+.phrase-text {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+    font-family: arial;
+    color: #556;
+    transform: scale(0);
+}
+
+.phrase {
+    position: absolute;
+    bottom: 370px;
+    z-index: 20;
+    left: 790px;
+    right: 0;
+    max-width: 350px;
+}
+
+.phrase-corner {
+    position: absolute;
+    bottom: -50px;
+    right: 10px;
+    z-index: 19;
+}
+
+.phrase-corner-hp {
+    position: absolute;
+    z-index: 1;
+    border-radius: 100px;
+    background: #fff;
+    transform:  scale(0);
+}
+
+.phrase-corner-hp1 {
+    bottom: -30px;
+    left: -90px;
+    width: 10px;
+    height: 10px;
+}
+.phrase-corner-hp2 {
+    bottom: -10px;
+    left: -70px;
+    width: 15px;
+    height: 15px;
+}
+.phrase-corner-hp3 {
+    bottom: 20px;
+    left: -60px;
+    width: 20px;
+    height: 20px;
+}
+
+.phrase[data-is-animated="1"] .phrase-corner-hp1 {
+    animation: phrase-show-dot 5000ms linear;
+    animation-delay: 0ms;
+}
+
+.phrase[data-is-animated="1"] .phrase-corner-hp2 {
+    animation: phrase-show-dot 5000ms linear;
+    animation-delay: 100ms;
+}
+
+.phrase[data-is-animated="1"] .phrase-corner-hp3 {
+    animation: phrase-show-dot 5000ms linear;
+    animation-delay: 200ms;
+}
+
+.phrase[data-is-animated="1"] .phrase-text {
+    animation: phrase-show-text 2500ms ease-in-out;
+    animation-delay: 500ms;
+}
+
+@keyframes phrase-show-text {
+    0% {
+        transform: translate3D(30%,50%,0) scale(0)
+    }
+
+    10% {
+        transform: translate3D(0,0,0) scale(1)
+    }
+
+    90% {
+        transform: translate3D(0,0,0) scale(1)
+    }
+
+    100% {
+        transform: translate3D(0,0,0) scale(0)
+    }
+}
+
+@keyframes phrase-show-dot {
+    0% {
+        transform:  scale(0)
+    }
+
+    10% {
+        transform: scale(1)
+    }
+
+    20% {
+        transform: scale(1)
+    }
+
+    30% {
+        transform: scale(0)
+    }
+}
