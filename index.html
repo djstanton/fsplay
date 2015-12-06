@@ -163,9 +163,15 @@
                     e.preventDefault();
                     this.setAttribute('data-is-animated', '1');
 
+
                     setTimeout( function(){
-                        this.setAttribute('data-is-animated', '0')
+                        this.setAttribute('data-is-animated', '0');
+                        this.setAttribute('data-is-caught', '0')
                     }.bind(this), 5000);
+
+                    setTimeout( function(){
+                        this.setAttribute('data-is-caught', '1')
+                    }.bind(this), 2500);
                 };
             })( i ), 'false' );
         }

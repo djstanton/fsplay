@@ -203,8 +203,8 @@ html, body {
 }
 
 
- .coin[data-is-caught="1"] .coin-hp2{display: none}
- .coin[data-is-caught="1"] .coin-hp1{
+ .coin[data-is-animated="1"][data-is-caught="1"] .coin-hp2{display: none}
+ .coin[data-is-animated="1"][data-is-caught="1"] .coin-hp1{
      animation-play-state: paused;
  }
 
