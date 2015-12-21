@@ -29,7 +29,7 @@
 
         <div class="man">
             <div class="man-body">
-                <div id="hand-dozen" class="man-hand man-hand-dozen" data-pos="2">
+                <div id="hand-even" class="man-hand man-hand-even" data-pos="2">
 
                     <div class="man-hand-hp4">
                         <div class="man-hand-hp3">
@@ -44,7 +44,7 @@
 
                 </div>
 
-                <div id="hand-even" class="man-hand man-hand-even" data-pos="1">
+                <div id="hand-odd" class="man-hand man-hand-odd" data-pos="1">
 
                     <div class="man-hand-hp4">
                         <div class="man-hand-hp3">
@@ -381,7 +381,7 @@
 
             coins[ i ].addEventListener( 'click', (function( lockedInIndex ){
                 return function(e){
-                    e.preventDefault();
+                    e.proddtDefault();
                     this.setAttribute('data-is-animated', '1');
                     phraseGenerator.showPhrase('good');
 
@@ -405,7 +405,7 @@
 
             kits[i].addEventListener('click', (function (lockedInIndex) {
                 return function (e) {
-                    e.preventDefault();
+                    e.proddtDefault();
                     this.setAttribute('data-is-animated', '1');
 
                     var coin = this.getElementsByClassName('coin')[0];
@@ -423,16 +423,16 @@
 
     (function () {
         var man = document.getElementsByClassName('man-body')[0];
-        var manHandDozen = document.getElementById('hand-dozen');
-        var manHandEven = document.getElementById('hand-even');
-        var dozen = 2;
-        var even = 1;
+        var manHandDozen = document.getElementById('hand-even');
+        var manHandEven = document.getElementById('hand-odd');
+        var even = 2;
+        var odd = 1;
 
         setInterval(function () {
-            manHandDozen.setAttribute('data-pos', dozen);
-            manHandEven.setAttribute('data-pos', even);
-            dozen = fsgame.getRandomInt(1,8);
+            manHandDozen.setAttribute('data-pos', even);
+            manHandEven.setAttribute('data-pos', odd);
             even = fsgame.getRandomInt(1,8);
+            odd = fsgame.getRandomInt(1,8);
         }, 200);
 
     })();

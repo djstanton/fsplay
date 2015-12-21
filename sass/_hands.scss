@@ -114,13 +114,13 @@ $palm-h: image-height("../img/hands/1.png");
   @extend %hand-circles;
 }
 
-$positions-dozen:
+$positions-even :
 (id: 2, rot1: -50deg, rot2: -50deg, rot3: -15deg, rot4: -10deg),
 (id: 4, rot1: 90deg, rot2: 40deg, rot3: -135deg, rot4: -0deg),
 (id: 6, rot1: 80deg, rot2: 40deg, rot3: -120deg, rot4: -70deg),
 (id: 8, rot1: 40deg, rot2: 10deg, rot3: -30deg, rot4: -140deg);
 
-@each $position in $positions-dozen {
+@each $position in $positions-even  {
   $key: map-get($position, id);
   $rot1: map-get($position, rot1);
   $rot2: map-get($position, rot2);
@@ -144,12 +144,12 @@ $positions-dozen:
   }
 }
 
-// Invert even hand:
-.man-hand-even {
+// Invert odd hand:
+.man-hand-odd {
   left: 119px;
   transform: scaleX(-1);
 }
 
-.man-hand-dozen {
+.man-hand-even  {
 
 }
