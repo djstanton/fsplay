@@ -1,0 +1,39 @@
+.coin[data-is-bomb="1"] .coin-hp2{
+  background: none;
+}
+
+.coin[data-is-bomb="1"] .coin-hp2:after{
+  content: '';
+  display: block;
+  background: url('../img/test-bomb.png');
+  background-repeat: no-repeat;
+  background-size: 58px 77px;
+  width: 58px;
+  height: 77px;
+  position: absolute;
+  top: -22px;
+  right: -1px;
+}
+
+
+.coin[data-is-bomb="1"] .coin-boom-core:after{
+  content: '';
+  display: block;
+  background: url('../img/test-bomb.png');
+  background-repeat: no-repeat;
+  background-size: 58px 77px;
+  width: 58px;
+  height: 77px;
+  position: absolute;
+  top: -22px;
+  right: -1px;
+}
+
+.coin[data-is-bomb="1"] .coin-boom-core {
+  background:  none
+}
+
+.coin[data-is-bomb="1"] .coin-boom {
+  background: #f66235;
+  border: 4px solid #f6ab35;
+}

@@ -1,0 +1,55 @@
+
+.score {
+  width: 447px;
+  height: 113px;
+  background: url('../img/score.png') no-repeat;
+  position: absolute;
+  z-index: 4;
+  text-align: center;
+
+  right: 10px;
+  bottom: 20px;
+}
+
+.score-text {
+  position: relative;
+  margin: 14px 0;
+  display: inline-block;
+  font-size: 72px;
+  font-family: helvetica;
+  font-weight: bold;
+  padding-left: 100px;
+
+  background: linear-gradient(#ffe83d, #faac00);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.timer {
+  position: absolute;
+  width: 303px;
+  height: 113px;
+  text-align: center;
+  background: url('../img/timer.png');
+
+  left: 10px;
+  bottom: 20px;
+  z-index: 3;
+}
+
+.timer-text {
+  position: relative;
+  margin: 14px 0;
+  display: inline-block;
+  font-size: 72px;
+  font-family: helvetica;
+  font-weight: bold;
+
+  color: #e0edf6;
+}
+
+
+
+
+
+

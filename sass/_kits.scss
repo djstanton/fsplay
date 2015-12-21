@@ -1,0 +1,252 @@
+
+.kits {
+  position: relative;
+  z-index: 10;
+}
+
+$kits: (id: 1, pos-y: 0px, face-top-pos-top: -47px, face-top-pos-left: 0px, face-bot-pos-top: -3px, face-bot-pos-left: 43px, throat-top: 0px, throat-bot: 0px),
+(id: 2, pos-y: 0px, face-top-pos-top: -41px, face-top-pos-left: 0px, face-bot-pos-top: -9px, face-bot-pos-left: 44px, throat-top: 0px, throat-bot: 0px),
+(id: 3, pos-y: 20px, face-top-pos-top: -34px, face-top-pos-left: 22px, face-bot-pos-top: -2px, face-bot-pos-left: 49px, throat-top: 0px, throat-bot: 0px),
+(id: 4, pos-y: 20px, face-top-pos-top: -38px, face-top-pos-left: 10px, face-bot-pos-top: -3px, face-bot-pos-left: 46px, throat-top: 0px, throat-bot: 0px),
+(id: 5, pos-y: 40px, face-top-pos-top: -38px, face-top-pos-left: 28px, face-bot-pos-top: -5px, face-bot-pos-left: 54px, throat-top: 0px, throat-bot: 0px),
+(id: 6, pos-y: 40px, face-top-pos-top: -45px, face-top-pos-left: 28px, face-bot-pos-top: -5px, face-bot-pos-left: 55px, throat-top: 0px, throat-bot: 0px),
+(id: 7, pos-y: 60px, face-top-pos-top: -45px, face-top-pos-left: 12px, face-bot-pos-top: -7px, face-bot-pos-left: 50px, throat-top: 0px, throat-bot: 0px),
+(id: 8, pos-y: 60px, face-top-pos-top: -41px, face-top-pos-left: 8px, face-bot-pos-top: -7px, face-bot-pos-left: 49px, throat-top: 0px, throat-bot: 0px);
+//( id: 2, pos-y: 0px , face-top-pos-top: -41px, face-top-pos-left: 0px, face-bot-pos-top: -9px, face-bot-pos-left: 44px )
+
+@each $kit in $kits {
+  $key: map-get($kit, id);
+  $pos-y: map-get($kit, pos-y);
+  $face-top-pos-top: map-get($kit, face-top-pos-top);
+  $face-top-pos-left: map-get($kit, face-top-pos-left);
+  $face-bot-pos-top: map-get($kit, face-bot-pos-top);
+  $face-bot-pos-left: map-get($kit, face-bot-pos-left);
+  $throat-top: map-get($kit, throat-top);
+  $throat-bot: map-get($kit, throat-bot);
+
+  .kit[data-kit-id="#{$key}"] {
+    top: $pos-y * 9;
+
+    .kit-head-throat {
+//      top: $throat-top;
+//      left: $throat-bot;
+    }
+
+    .kit-head-bot {
+      &:after {
+        top: $face-bot-pos-top;
+        left: $face-bot-pos-left;
+        background: url("../img/faces/bot-#{$key}.png") no-repeat;
+        width: image-width("../img/faces/bot-#{$key}.png");
+        height: image-height("../img/faces/bot-#{$key}.png");
+      }
+    }
+    .kit-head-top {
+      &:after {
+        top: $face-top-pos-top;
+        left: $face-top-pos-left;
+        background: url("../img/faces/top-#{$key}.png") no-repeat;
+        width: image-width("../img/faces/top-#{$key}.png");
+        height: image-height("../img/faces/top-#{$key}.png");
+      }
+    }
+  }
+}
+
+.kit:nth-child(2n+1) {
+  right: auto;
+  left: 0;
+
+  .kit-body {
+    transform: scaleX(-1);
+    right: auto;
+    left: 20px;
+  }
+  .kit-branch {
+    transform: scaleX(1)
+  }
+  .kit-number {
+    transform: scaleX(1)
+  }
+
+  .kit-head-bot:after {
+    transform: scaleX(-1)
+  }
+  .kit-head-top:after {
+    transform: scaleX(-1)
+  }
+  .coin {
+    transform: scaleX(-0.5) scaleY(0.5)
+  }
+}
+
+.kit {
+  position: absolute;
+  right: 0;
+  width: 600px;
+  height: 300px;
+}
+
+.kit-wr {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+}
+
+.kit-branch {
+  background: url("../img/branch.png") no-repeat;
+  position: relative;
+  width: 600px;
+  height: 96px;
+  transform: scaleX(-1);
+}
+
+.kit-body {
+  position: absolute;
+  background: url("../img/kit.png") no-repeat;
+  width: 291px;
+  height: 160px;
+  top: -160px;
+  right: 20px;
+}
+
+.kit-head {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 24px;
+  left: -63px;
+  z-index: 3;
+}
+
+.kit-head-top {
+  position: relative;
+  height: 75%;
+  width: 100%;
+  z-index: 3;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+}
+
+.kit-head-bot {
+  position: relative;
+  height: 25%;
+  width: 100%;
+  z-index: 2;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+}
+
+.kit-head-throat {
+  background: url("../img/faces/throat.png") no-repeat;
+  width: image-width("../img/faces/throat.png");
+  height: image-height("../img/faces/throat.png");
+
+  position: absolute;
+  z-index: 1;
+
+  top: 37px;
+  left: -10px;
+}
+
+.kit[data-is-animated="1"] {
+  .kit-head-throat {
+    animation: throat 1000ms ease-in-out;
+  }
+  .kit-head-top {
+    transform-origin: 100% 100%;
+    animation: rotate-top 1000ms ease-in-out;
+  }
+  .kit-head-bot {
+    transform-origin: 100% 0;
+    animation: rotate-bot 1000ms ease-in-out;
+  }
+  .kit-head {
+    transform-origin: 100% 50%;
+    animation: rotate-head 1000ms ease-in-out;
+  }
+}
+
+.kit-number {
+  position: absolute;
+  left: 10px;
+  top: -58px;
+  background: #d6e8f4;
+  color: #061630;
+  border-radius: 1000px;
+  width: 48px;
+  box-sizing: border-box;
+  height: 48px;
+  font-size: 36px;
+  line-height: 36px;
+  padding: 6px 0;
+  text-align: center;
+  font-weight: bold;
+  font-family: trebuchet ms;
+  transform: scaleX(-1);
+}
+
+@keyframes rotate-head {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(60deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate-bot {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-80deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes throat {
+  0% {
+    transform: translate3D(0,0,0);
+  }
+
+  50% {
+    transform: translate3D(-10px,0px,0);
+  }
+
+  100% {
+    transform: translate3D(0,0,0);
+  }
+}
+
+@keyframes rotate-top {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  50% {
+    transform: rotate(30deg)
+  }
+
+  100% {
+    transform: rotate(deg)
+  }
+}

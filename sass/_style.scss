@@ -1,0 +1,71 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.fs-game {
+
+}
+
+.fs-game-bg {
+  width: 1680px;
+  height: 1050px;
+  background: url('../img/bg-3.png');
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -440px;
+    left: -940px;
+    z-index: 1;
+
+    background: url('../img/bg-2.png');
+    width: image-width("../img/bg-2.png");
+    height: image-height("../img/bg-2.png");
+
+    animation: rotate-bg 200000ms linear infinite;
+  }
+}
+
+@keyframes rotate-bg {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sale-banner {
+  width: 440px;
+  height: 100px;
+  background: url('../img/test-banner.png');
+  background-size: cover;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  transition: transform 1s ease-out;
+  transform: translate3D(0px, 0px, 0px);
+}
+
+.sale-banner[data-position="0"] {
+  transform: translate3D(0px, -100px, 0px);
+}
+
+.sale-banner[data-position="1"] {
+  transform: translate3D(0px, 80px, 0px);
+}
+
+.sale-banner[data-position="2"] {
+  transition: transform 2s ease-out;
+  transform: translate3D(0px, 100vh, 0px);
+}

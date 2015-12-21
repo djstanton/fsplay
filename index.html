@@ -2,9 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Catch the Egg | Ну, погоди!</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/phrase-generator.css">
+    <title>Фото Охота</title>
+    <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/jq-tmpl.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
@@ -28,143 +27,347 @@
             </div>
         </div>
 
+        <div class="man">
+            <div class="man-body">
+                <div id="hand-dozen" class="man-hand man-hand-dozen" data-pos="2">
+
+                    <div class="man-hand-hp4">
+                        <div class="man-hand-hp3">
+                            <div class="man-hand-hp2">
+
+                            </div>
+                            <div class="man-hand-hp1">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="hand-even" class="man-hand man-hand-even" data-pos="1">
+
+                    <div class="man-hand-hp4">
+                        <div class="man-hand-hp3">
+                            <div class="man-hand-hp2">
+
+                            </div>
+                            <div class="man-hand-hp1">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="score" class="score">
+            <div class="score-text">
+                000000
+            </div>
+        </div>
+
+        <div id="timer" class="timer">
+            <div class="timer-text">
+                02:05
+            </div>
+        </div>
+
+        <div class="kits">
+
+            <div class="kit" data-kit-id="1" data-is-animated="0">
+                <div class="kit-wr">
+                    <div class="kit-body">
+
+                        <div class="coin" data-id="0" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
+                            <div class="coin-hp1">
+                                <div class="coin-hp2"></div>
+
+                                <div class="coin-boom coin-boom-1"></div>
+                                <div class="coin-boom coin-boom-2"></div>
+                                <div class="coin-boom coin-boom-3"></div>
+                                <div class="coin-boom coin-boom-4"></div>
+                                <div class="coin-boom coin-boom-5"></div>
+                                <div class="coin-boom coin-boom-6"></div>
+                                <div class="coin-boom coin-boom-7"></div>
+                                <div class="coin-boom coin-boom-8"></div>
+                                <div class="coin-boom-core"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="kit-head-throat"></div>
+
+                        <div class="kit-head">
+                            <div class="kit-head-top"></div>
+                            <div class="kit-head-bot"></div>
+                        </div>
+                    </div>
+                    <div class="kit-branch">
+                        <div class="kit-number">
+                            1
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kit" data-kit-id="2" data-is-animated="0">
+                <div class="kit-wr">
+                    <div class="kit-body">
+
+                        <div class="coin" data-id="1" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
+                            <div class="coin-hp1">
+                                <div class="coin-hp2"></div>
+
+                                <div class="coin-boom coin-boom-1"></div>
+                                <div class="coin-boom coin-boom-2"></div>
+                                <div class="coin-boom coin-boom-3"></div>
+                                <div class="coin-boom coin-boom-4"></div>
+                                <div class="coin-boom coin-boom-5"></div>
+                                <div class="coin-boom coin-boom-6"></div>
+                                <div class="coin-boom coin-boom-7"></div>
+                                <div class="coin-boom coin-boom-8"></div>
+                                <div class="coin-boom-core"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="kit-head-throat"></div>
+
+                        <div class="kit-head">
+                            <div class="kit-head-top"></div>
+                            <div class="kit-head-bot"></div>
+                        </div>
+                    </div>
+                    <div class="kit-branch">
+                        <div class="kit-number">
+                            2
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kit" data-kit-id="3" data-is-animated="0">
+                <div class="kit-wr">
+                    <div class="kit-body">
+
+                        <div class="coin" data-id="2" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
+                            <div class="coin-hp1">
+                                <div class="coin-hp2"></div>
+
+                                <div class="coin-boom coin-boom-1"></div>
+                                <div class="coin-boom coin-boom-2"></div>
+                                <div class="coin-boom coin-boom-3"></div>
+                                <div class="coin-boom coin-boom-4"></div>
+                                <div class="coin-boom coin-boom-5"></div>
+                                <div class="coin-boom coin-boom-6"></div>
+                                <div class="coin-boom coin-boom-7"></div>
+                                <div class="coin-boom coin-boom-8"></div>
+                                <div class="coin-boom-core"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="kit-head-throat"></div>
+
+                        <div class="kit-head">
+                            <div class="kit-head-top"></div>
+                            <div class="kit-head-bot"></div>
+                        </div>
+                    </div>
+                    <div class="kit-branch">
+                        <div class="kit-number">
+                            3
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kit" data-kit-id="4" data-is-animated="0">
+                <div class="kit-wr">
+                    <div class="kit-body">
+
+                        <div class="coin" data-id="3" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
+                            <div class="coin-hp1">
+                                <div class="coin-hp2"></div>
+
+                                <div class="coin-boom coin-boom-1"></div>
+                                <div class="coin-boom coin-boom-2"></div>
+                                <div class="coin-boom coin-boom-3"></div>
+                                <div class="coin-boom coin-boom-4"></div>
+                                <div class="coin-boom coin-boom-5"></div>
+                                <div class="coin-boom coin-boom-6"></div>
+                                <div class="coin-boom coin-boom-7"></div>
+                                <div class="coin-boom coin-boom-8"></div>
+                                <div class="coin-boom-core"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="kit-head-throat"></div>
+
+                        <div class="kit-head">
+                            <div class="kit-head-top"></div>
+                            <div class="kit-head-bot"></div>
+                        </div>
+                    </div>
+                    <div class="kit-branch">
+                        <div class="kit-number">
+                            4
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kit" data-kit-id="5" data-is-animated="0">
+                <div class="kit-wr">
+                    <div class="kit-body">
+
+                        <div class="coin" data-id="4" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
+                            <div class="coin-hp1">
+                                <div class="coin-hp2"></div>
+
+                                <div class="coin-boom coin-boom-1"></div>
+                                <div class="coin-boom coin-boom-2"></div>
+                                <div class="coin-boom coin-boom-3"></div>
+                                <div class="coin-boom coin-boom-4"></div>
+                                <div class="coin-boom coin-boom-5"></div>
+                                <div class="coin-boom coin-boom-6"></div>
+                                <div class="coin-boom coin-boom-7"></div>
+                                <div class="coin-boom coin-boom-8"></div>
+                                <div class="coin-boom-core"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="kit-head-throat"></div>
+
+                        <div class="kit-head">
+                            <div class="kit-head-top"></div>
+                            <div class="kit-head-bot"></div>
+                        </div>
+                    </div>
+                    <div class="kit-branch">
+                        <div class="kit-number">
+                            5
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kit" data-kit-id="6" data-is-animated="0">
+                <div class="kit-wr">
+                    <div class="kit-body">
+
+                        <div class="coin" data-id="5" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
+                            <div class="coin-hp1">
+                                <div class="coin-hp2"></div>
+
+                                <div class="coin-boom coin-boom-1"></div>
+                                <div class="coin-boom coin-boom-2"></div>
+                                <div class="coin-boom coin-boom-3"></div>
+                                <div class="coin-boom coin-boom-4"></div>
+                                <div class="coin-boom coin-boom-5"></div>
+                                <div class="coin-boom coin-boom-6"></div>
+                                <div class="coin-boom coin-boom-7"></div>
+                                <div class="coin-boom coin-boom-8"></div>
+                                <div class="coin-boom-core"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="kit-head-throat"></div>
+
+                        <div class="kit-head">
+                            <div class="kit-head-top"></div>
+                            <div class="kit-head-bot"></div>
+                        </div>
+                    </div>
+                    <div class="kit-branch">
+                        <div class="kit-number">
+                            6
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kit" data-kit-id="7" data-is-animated="0">
+                <div class="kit-wr">
+                    <div class="kit-body">
+
+                        <div class="coin" data-id="6" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
+                            <div class="coin-hp1">
+                                <div class="coin-hp2"></div>
+
+                                <div class="coin-boom coin-boom-1"></div>
+                                <div class="coin-boom coin-boom-2"></div>
+                                <div class="coin-boom coin-boom-3"></div>
+                                <div class="coin-boom coin-boom-4"></div>
+                                <div class="coin-boom coin-boom-5"></div>
+                                <div class="coin-boom coin-boom-6"></div>
+                                <div class="coin-boom coin-boom-7"></div>
+                                <div class="coin-boom coin-boom-8"></div>
+                                <div class="coin-boom-core"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="kit-head-throat"></div>
+
+                        <div class="kit-head">
+                            <div class="kit-head-top"></div>
+                            <div class="kit-head-bot"></div>
+                        </div>
+                    </div>
+                    <div class="kit-branch">
+                        <div class="kit-number">
+                            7
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kit" data-kit-id="8" data-is-animated="0">
+                <div class="kit-wr">
+                    <div class="kit-body">
+
+                        <div class="coin" data-id="7" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
+                            <div class="coin-hp1">
+                                <div class="coin-hp2"></div>
+
+                                <div class="coin-boom coin-boom-1"></div>
+                                <div class="coin-boom coin-boom-2"></div>
+                                <div class="coin-boom coin-boom-3"></div>
+                                <div class="coin-boom coin-boom-4"></div>
+                                <div class="coin-boom coin-boom-5"></div>
+                                <div class="coin-boom coin-boom-6"></div>
+                                <div class="coin-boom coin-boom-7"></div>
+                                <div class="coin-boom coin-boom-8"></div>
+                                <div class="coin-boom-core"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="kit-head-throat"></div>
+
+                        <div class="kit-head">
+                            <div class="kit-head-top"></div>
+                            <div class="kit-head-bot"></div>
+                        </div>
+                    </div>
+                    <div class="kit-branch">
+                        <div class="kit-number">
+                            8
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
         <div class="sale-banner" data-id="1" data-position="0"></div>
         <div class="sale-banner" data-id="2" data-position="0"></div>
         <div class="sale-banner" data-id="3" data-position="0"></div>
-
-
-        <div class="coin" data-id="0" data-is-animated="0" data-is-caught="0" data-is-bomb="1">
-            <div class="coin-hp1">
-                <div class="coin-hp2"></div>
-
-                <div class="coin-boom coin-boom-1"></div>
-                <div class="coin-boom coin-boom-2"></div>
-                <div class="coin-boom coin-boom-3"></div>
-                <div class="coin-boom coin-boom-4"></div>
-                <div class="coin-boom coin-boom-5"></div>
-                <div class="coin-boom coin-boom-6"></div>
-                <div class="coin-boom coin-boom-7"></div>
-                <div class="coin-boom coin-boom-8"></div>
-                <div class="coin-boom-core"></div>
-
-            </div>
-        </div>
-
-        <div class="coin" data-id="1" data-is-animated="0" data-is-caught="0" data-is-bomb="1">
-            <div class="coin-hp1">
-                <div class="coin-hp2"></div>
-
-                <div class="coin-boom coin-boom-1"></div>
-                <div class="coin-boom coin-boom-2"></div>
-                <div class="coin-boom coin-boom-3"></div>
-                <div class="coin-boom coin-boom-4"></div>
-                <div class="coin-boom coin-boom-5"></div>
-                <div class="coin-boom coin-boom-6"></div>
-                <div class="coin-boom coin-boom-7"></div>
-                <div class="coin-boom coin-boom-8"></div>
-                <div class="coin-boom-core"></div>
-
-            </div>
-        </div>
-
-        <div class="coin" data-id="2" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
-            <div class="coin-hp1">
-                <div class="coin-hp2"></div>
-
-                <div class="coin-boom coin-boom-1"></div>
-                <div class="coin-boom coin-boom-2"></div>
-                <div class="coin-boom coin-boom-3"></div>
-                <div class="coin-boom coin-boom-4"></div>
-                <div class="coin-boom coin-boom-5"></div>
-                <div class="coin-boom coin-boom-6"></div>
-                <div class="coin-boom coin-boom-7"></div>
-                <div class="coin-boom coin-boom-8"></div>
-                <div class="coin-boom-core"></div>
-
-            </div>
-        </div>
-
-        <div class="coin" data-id="3" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
-            <div class="coin-hp1">
-                <div class="coin-hp2"></div>
-
-                <div class="coin-boom coin-boom-1"></div>
-                <div class="coin-boom coin-boom-2"></div>
-                <div class="coin-boom coin-boom-3"></div>
-                <div class="coin-boom coin-boom-4"></div>
-                <div class="coin-boom coin-boom-5"></div>
-                <div class="coin-boom coin-boom-6"></div>
-                <div class="coin-boom coin-boom-7"></div>
-                <div class="coin-boom coin-boom-8"></div>
-                <div class="coin-boom-core"></div>
-
-            </div>
-        </div>
-        <div class="coin" data-id="4" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
-            <div class="coin-hp1">
-                <div class="coin-hp2"></div>
-
-                <div class="coin-boom coin-boom-1"></div>
-                <div class="coin-boom coin-boom-2"></div>
-                <div class="coin-boom coin-boom-3"></div>
-                <div class="coin-boom coin-boom-4"></div>
-                <div class="coin-boom coin-boom-5"></div>
-                <div class="coin-boom coin-boom-6"></div>
-                <div class="coin-boom coin-boom-7"></div>
-                <div class="coin-boom coin-boom-8"></div>
-                <div class="coin-boom-core"></div>
-
-            </div>
-        </div>
-        <div class="coin" data-id="5" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
-            <div class="coin-hp1">
-                <div class="coin-hp2"></div>
-
-                <div class="coin-boom coin-boom-1"></div>
-                <div class="coin-boom coin-boom-2"></div>
-                <div class="coin-boom coin-boom-3"></div>
-                <div class="coin-boom coin-boom-4"></div>
-                <div class="coin-boom coin-boom-5"></div>
-                <div class="coin-boom coin-boom-6"></div>
-                <div class="coin-boom coin-boom-7"></div>
-                <div class="coin-boom coin-boom-8"></div>
-                <div class="coin-boom-core"></div>
-
-            </div>
-        </div>
-        <div class="coin" data-id="6" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
-            <div class="coin-hp1">
-                <div class="coin-hp2"></div>
-
-                <div class="coin-boom coin-boom-1"></div>
-                <div class="coin-boom coin-boom-2"></div>
-                <div class="coin-boom coin-boom-3"></div>
-                <div class="coin-boom coin-boom-4"></div>
-                <div class="coin-boom coin-boom-5"></div>
-                <div class="coin-boom coin-boom-6"></div>
-                <div class="coin-boom coin-boom-7"></div>
-                <div class="coin-boom coin-boom-8"></div>
-                <div class="coin-boom-core"></div>
-
-            </div>
-        </div>
-        <div class="coin" data-id="7" data-is-animated="0" data-is-caught="0" data-is-bomb="0">
-            <div class="coin-hp1">
-                <div class="coin-hp2"></div>
-
-                <div class="coin-boom coin-boom-1"></div>
-                <div class="coin-boom coin-boom-2"></div>
-                <div class="coin-boom coin-boom-3"></div>
-                <div class="coin-boom coin-boom-4"></div>
-                <div class="coin-boom coin-boom-5"></div>
-                <div class="coin-boom coin-boom-6"></div>
-                <div class="coin-boom coin-boom-7"></div>
-                <div class="coin-boom coin-boom-8"></div>
-                <div class="coin-boom-core"></div>
-
-            </div>
-        </div>
 
     </div>
 </div>
@@ -193,6 +396,45 @@
                 };
             })( i ), 'false' );
         }
+    })();
+
+    (function () {
+        var kits = document.getElementsByClassName('kit');
+
+        for (var i = 0; i < kits.length; i++) {
+
+            kits[i].addEventListener('click', (function (lockedInIndex) {
+                return function (e) {
+                    e.preventDefault();
+                    this.setAttribute('data-is-animated', '1');
+
+                    var coin = this.getElementsByClassName('coin')[0];
+
+                    coin.setAttribute('data-is-animated', '1');
+
+                    setTimeout(function () {
+                        this.setAttribute('data-is-animated', '0');
+                    }.bind(this), 1000);
+
+                };
+            })(i), 'false');
+        }
+    })();
+
+    (function () {
+        var man = document.getElementsByClassName('man-body')[0];
+        var manHandDozen = document.getElementById('hand-dozen');
+        var manHandEven = document.getElementById('hand-even');
+        var dozen = 2;
+        var even = 1;
+
+        setInterval(function () {
+            manHandDozen.setAttribute('data-pos', dozen);
+            manHandEven.setAttribute('data-pos', even);
+            dozen = fsgame.getRandomInt(1,8);
+            even = fsgame.getRandomInt(1,8);
+        }, 200);
+
     })();
 
 </script>
