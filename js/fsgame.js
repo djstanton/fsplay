@@ -18,6 +18,7 @@ fsgame = {
     coinInterval: 500,
     playI: 0,
     x2: false,
+    scoreWrap: '.score-text',
     isStarted: false,
     getRandomInt: function(min, max){
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -80,35 +81,47 @@ fsgame = {
         _this.stockfallTime = _this.stockfallTime + _this.getRandomInt(-200, 500);
     },
     coinGenerator: {
-        coinsWrap: '.fs-game-bg',
+        coinsWrap: '.kit-body',
         coinsCounter: 0,
+        collectedCoins: 0,
         id: 1,
         makeCoin: function(){
             var data = {
                 slotId: fsgame.getRandomInt(0,7),
-                isBomb: fsgame.getRandomInt(0, 3),
+                isBomb: fsgame.getRandomInt(0, 7),
                 speed: fsgame.getRandomInt(1, 3)
             };
             data.speed = (data.speed/2)*1000;
             if(data.isBomb !== 1){
                 fsgame.coinGenerator.coinsCounter++;
             }
-            $.tmpl('<div class="coin" data-id="${slotId}" data-speed="${speed}" data-is-animated="1" data-is-caught="0" data-is-bomb="${isBomb}"> <div class="coin-hp1"> <div class="coin-hp2"></div><div class="coin-boom coin-boom-1"></div> <div class="coin-boom coin-boom-2"></div> <div class="coin-boom coin-boom-3"></div> <div class="coin-boom coin-boom-4"></div> <div class="coin-boom coin-boom-5"></div> <div class="coin-boom coin-boom-6"></div> <div class="coin-boom coin-boom-7"></div> <div class="coin-boom coin-boom-8"></div> <div class="coin-boom-core"></div> </div></div>', data).appendTo(this.coinsWrap);
+            $.tmpl('<div class="coin" data-id="${slotId}" data-speed="${speed}" data-is-animated="1" data-is-caught="0" data-is-bomb="${isBomb}"> <div class="coin-hp1"> <div class="coin-hp2"></div><div class="coin-boom coin-boom-1"></div> <div class="coin-boom coin-boom-2"></div> <div class="coin-boom coin-boom-3"></div> <div class="coin-boom coin-boom-4"></div> <div class="coin-boom coin-boom-5"></div> <div class="coin-boom coin-boom-6"></div> <div class="coin-boom coin-boom-7"></div> <div class="coin-boom coin-boom-8"></div> <div class="coin-boom-core"></div> </div></div>', data).appendTo($('[data-kit-id ='+data.slotId+']').find('.kit-body')[0]);
+            $('[data-kit-id ='+data.slotId+']').attr('data-is-animated', 1);
             fsgame.checkCollect(data);
             fsgame.coinGenerator.id++;
         },
         makeFail: function(){
-            fsgame.coinGenerator.coinsCounter = fsgame.coinGenerator.coinsCounter-5;
+            var _this = this;
+            fsgame.coinGenerator.collectedCoins = fsgame.coinGenerator.collectedCoins-5;
+            $(_this.scoreWrap).html(fsgame.coinGenerator.collectedCoins);
+
         }
     },
     checkCollect: function(data){
         var _this = this;
         setTimeout(function(){
             if(data.slotId == _this.currentHand) {
-                console.log('Собрал');
+                if(data.isBomb == 1){
+                    fsgame.coinGenerator.collectedCoins = fsgame.coinGenerator.collectedCoins-5;
+                    $(_this.scoreWrap).html(fsgame.coinGenerator.collectedCoins);
+                } else {
+                    fsgame.coinGenerator.collectedCoins++;
+                    $(_this.scoreWrap).html(fsgame.coinGenerator.collectedCoins);
+                }
             } else {
                 console.log('Уронил');
             }
+            $('[data-kit-id ='+data.slotId+']').attr('data-is-animated', 0);
         }, data.speed);
     },
     getCoin: function(id){

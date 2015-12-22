@@ -381,7 +381,6 @@
 
             coins[ i ].addEventListener( 'click', (function( lockedInIndex ){
                 return function(e){
-                    e.proddtDefault();
                     this.setAttribute('data-is-animated', '1');
                     phraseGenerator.showPhrase('good');
 
@@ -405,7 +404,6 @@
 
             kits[i].addEventListener('click', (function (lockedInIndex) {
                 return function (e) {
-                    e.proddtDefault();
                     this.setAttribute('data-is-animated', '1');
 
                     var coin = this.getElementsByClassName('coin')[0];
