@@ -11,9 +11,19 @@
 <body>
 
 
+<div class="fs-game-bg"></div>
+<div class="fs-game" data-state="0">
+    <div class="fs-game-wrap">
 
-<div class="fs-game">
-    <div class="fs-game-bg">
+        <div class="welcome">
+            <div class="welcome-text">
+                PRESS X TO START
+            </div>
+        </div>
+
+        <div class="select-team">
+            <div class=""></div>
+        </div>
 
         <div id="phrase" class="phrase" data-is-animated="0">
             <div id="phrase-text" class="phrase-text">
@@ -427,11 +437,12 @@
         var odd = 1;
 
         setInterval(function () {
-            manHandDozen.setAttribute('data-pos', even);
-            manHandEven.setAttribute('data-pos', odd);
+            manHandDozen.setAttribute('data-pos', odd);
+            manHandEven.setAttribute('data-pos', even);
+
             even = fsgame.getRandomInt(1,8);
             odd = fsgame.getRandomInt(1,8);
-        }, 200);
+        }, 500);
 
     })();
 
