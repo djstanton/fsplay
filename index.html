@@ -8,7 +8,7 @@
     <script type="text/javascript" src="js/jq-tmpl.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 </head>
-<body>
+<body onkeypress="fsgame.nextStep(event);">
 
 
 <div class="fs-game-bg"></div>
@@ -17,7 +17,7 @@
 
         <div class="welcome">
             <div class="welcome-text">
-                PRESS X TO START
+                PRESS ANY BUTTON TO START
             </div>
         </div>
 
@@ -427,23 +427,6 @@
                 };
             })(i), 'false');
         }
-    })();
-
-    (function () {
-        var man = document.getElementsByClassName('man-body')[0];
-        var manHandDozen = document.getElementById('hand-even');
-        var manHandEven = document.getElementById('hand-odd');
-        var even = 2;
-        var odd = 1;
-
-        setInterval(function () {
-            manHandDozen.setAttribute('data-pos', odd);
-            manHandEven.setAttribute('data-pos', even);
-
-            even = fsgame.getRandomInt(1,8);
-            odd = fsgame.getRandomInt(1,8);
-        }, 500);
-
     })();
 
 </script>

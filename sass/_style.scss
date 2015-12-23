@@ -123,3 +123,18 @@ $game-height: 1050px;
   transition: transform 2s ease-out;
   transform: translate3D(0px, 100vh, 0px);
 }
+.result {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 800px;
+  margin-left: -400px;
+  height: 400px;
+  margin-top: -200px;
+  font-size: 120px;
+  color: red;
+  z-index: 100;
+  text-align: center;
+  font-family: Arial;
+  font-weight: bold;
+}
