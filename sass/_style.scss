@@ -77,9 +77,55 @@ $game-height: 1050px;
 }
 
 .select-team {
-  width: 100%;
+  position: relative;
+  text-align: center;
+  display: block;
   height: $game-height;
 }
+
+.select-team-inner {
+  width: image-width('../img/green-block.png') * 4 + 200px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.select-team-block {
+  vert-align: top;
+  margin: 20px;
+  background: url('../img/green-block.png');
+  width: image-width('../img/green-block.png');
+  height: image-height('../img/green-block.png');
+  position: relative;
+  z-index: 1;
+  float: left;
+}
+
+.select-team-block:nth-of-type(2n+1){
+  background: url('../img/red-block.png');
+}
+
+.select-team-number {
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  font-size: 40px;
+  color: #000;
+  font-family: "trebuchet ms";
+  background: #fff;
+  border-radius: 1000px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40px;
+  margin: auto;
+  text-align: center;
+}
+
 
 .welcome-text {
   font-family: trebuchet ms;
@@ -93,6 +139,42 @@ $game-height: 1050px;
   display: inline-block;
   margin: auto;
   color: #fff;
+}
+
+.welcome-bg {
+  background: url('../img/start-bg.png');
+  width: image-width("../img/start-bg.png");
+  height: image-height("../img/start-bg.png");
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 170px;
+  margin: auto;
+}
+
+.welcome-top {
+  position: absolute;
+  width: 710px;
+  top: 168px;
+  left: 190px;
+  font-family: trebuchet ms;
+}
+.welcome-top-li {
+  padding: 25px;
+  margin-bottom: 4px;
+  color: #fff;
+  font-size: 30px;
+  &:after{
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+.welcome-top-team {
+  float: left;
+}
+.welcome-top-score {
+  float: right;
 }
 
 .sale-banner {
