@@ -96,7 +96,7 @@ body:after {
 /* line 97, ../sass/_style.scss */
 .select-team-block {
   vert-align: top;
-  margin: 20px;
+  margin: 40px 20px;
   background: url("../img/green-block.png");
   width: 311px;
   height: 311px;
@@ -1142,52 +1142,55 @@ body:after {
 /* line 41, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"] {
   animation-play-state: paused !important;
+  background: none;
 }
 
-/* line 45, ../sass/_conis_boom.scss */
+/* line 46, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"] .coin-hp2 {
   animation-play-state: paused !important;
+  background: none;
 }
 
-/* line 48, ../sass/_conis_boom.scss */
+/* line 50, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"] .coin-hp1 {
   animation-play-state: paused !important;
+  background: none;
 }
 
-/* line 53, ../sass/_conis_boom.scss */
+/* line 56, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-core {
   display: block;
   animation: coin-hide 500ms linear forwards;
 }
-/* line 57, ../sass/_conis_boom.scss */
+/* line 60, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-1 {
   animation: coin-collect-1 500ms linear forwards;
 }
-/* line 60, ../sass/_conis_boom.scss */
+/* line 63, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-2 {
   animation: coin-collect-2 500ms linear forwards;
 }
-/* line 63, ../sass/_conis_boom.scss */
+/* line 66, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-3 {
   animation: coin-collect-3 500ms linear forwards;
 }
-/* line 66, ../sass/_conis_boom.scss */
+/* line 69, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-4 {
   animation: coin-collect-4 500ms linear forwards;
 }
-/* line 69, ../sass/_conis_boom.scss */
+/* line 72, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-5 {
   animation: coin-collect-5 500ms linear forwards;
 }
-/* line 72, ../sass/_conis_boom.scss */
+/* line 75, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-6 {
   animation: coin-collect-6 500ms linear forwards;
 }
-/* line 75, ../sass/_conis_boom.scss */
+/* line 78, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-7 {
   animation: coin-collect-7 500ms linear forwards;
 }
-/* line 78, ../sass/_conis_boom.scss */
+/* line 81, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-8 {
   animation: coin-collect-8 500ms linear forwards;
 }
@@ -1362,12 +1365,21 @@ body:after {
 }
 
 /* line 55, ../sass/_coin_done.scss */
-.coin[data-is-done="1"][data-is-bomb="0"] .coin-done {
-  display: block;
+.coin[data-is-done="1"][data-is-bomb="1"] .coin-done {
+  display: none;
 }
-/* line 59, ../sass/_coin_done.scss */
-.coin[data-is-done="1"][data-is-bomb="0"] .coin-hp2 {
+
+/* line 61, ../sass/_coin_done.scss */
+.coin[data-is-done="1"] .coin-hp2 {
   background: none;
+}
+/* line 62, ../sass/_coin_done.scss */
+.coin[data-is-done="1"] .coin-hp2:after {
+  background: none;
+}
+/* line 64, ../sass/_coin_done.scss */
+.coin[data-is-done="1"] .coin-done {
+  display: block;
 }
 
 @keyframes coin-done-1 {

@@ -50,14 +50,19 @@ $DONE_ANIMATION_TIME: 500ms;
   opacity: 1;
 }
 
-.coin[data-is-done="1"][data-is-bomb="0"]{
+
+.coin[data-is-done="1"][data-is-bomb="1"]{
+  .coin-done {
+    display: none
+  }
+}
+.coin[data-is-done="1"]{
+
+  .coin-hp2{ background: none}
+  .coin-hp2:after { background: none }
 
   .coin-done {
     display: block
-  }
-
-  .coin-hp2 {
-    background: none;
   }
 }
 

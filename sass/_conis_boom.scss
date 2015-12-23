@@ -40,13 +40,16 @@ $BOOM_ANIMATION_TIME: 500ms;
 
 .coin[data-is-done="1"]{
   animation-play-state: paused !important;
+  background: none;
 }
 
 .coin[data-is-done="1"] .coin-hp2{
   animation-play-state: paused !important;
+  background: none;
 }
 .coin[data-is-done="1"] .coin-hp1{
   animation-play-state: paused !important;
+  background: none;
 }
 
 .coin[data-is-done="1"][data-is-bomb="1"] {
