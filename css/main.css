@@ -863,6 +863,7 @@ body:after {
   left: -2px;
   width: 55px;
   height: 55px;
+  transform: scale(0.5);
   display: block;
   z-index: 2;
 }
@@ -883,46 +884,46 @@ body:after {
 }
 
 /* line 34, ../sass/_coins.scss */
-.coin[data-is-animated="1"][data-id="0"],
-.coin[data-is-animated="1"][data-id="2"],
-.coin[data-is-animated="1"][data-id="4"],
-.coin[data-is-animated="1"][data-id="6"] {
-  animation: left-coin-scale 5000ms linear;
-}
-/* line 40, ../sass/_coins.scss */
-.coin[data-is-animated="1"][data-id="0"] .coin-hp1,
-.coin[data-is-animated="1"][data-id="2"] .coin-hp1,
-.coin[data-is-animated="1"][data-id="4"] .coin-hp1,
-.coin[data-is-animated="1"][data-id="6"] .coin-hp1 {
-  animation: left-coin-roll-and-drop 5000ms linear;
-}
-/* line 43, ../sass/_coins.scss */
-.coin[data-is-animated="1"][data-id="0"] .coin-hp2,
-.coin[data-is-animated="1"][data-id="2"] .coin-hp2,
-.coin[data-is-animated="1"][data-id="4"] .coin-hp2,
-.coin[data-is-animated="1"][data-id="6"] .coin-hp2 {
-  animation: left-coin-jump 1000ms ease-in-out;
-}
-
-/* line 48, ../sass/_coins.scss */
 .coin[data-is-animated="1"][data-id="1"],
 .coin[data-is-animated="1"][data-id="3"],
 .coin[data-is-animated="1"][data-id="5"],
 .coin[data-is-animated="1"][data-id="7"] {
-  animation: right-coin-scale 5000ms linear;
+  animation: left-coin-scale 5000ms linear;
 }
-/* line 54, ../sass/_coins.scss */
+/* line 40, ../sass/_coins.scss */
 .coin[data-is-animated="1"][data-id="1"] .coin-hp1,
 .coin[data-is-animated="1"][data-id="3"] .coin-hp1,
 .coin[data-is-animated="1"][data-id="5"] .coin-hp1,
 .coin[data-is-animated="1"][data-id="7"] .coin-hp1 {
-  animation: right-coin-roll-and-drop 5000ms linear;
+  animation: left-coin-roll-and-drop 5000ms linear;
 }
-/* line 58, ../sass/_coins.scss */
+/* line 43, ../sass/_coins.scss */
 .coin[data-is-animated="1"][data-id="1"] .coin-hp2,
 .coin[data-is-animated="1"][data-id="3"] .coin-hp2,
 .coin[data-is-animated="1"][data-id="5"] .coin-hp2,
 .coin[data-is-animated="1"][data-id="7"] .coin-hp2 {
+  animation: left-coin-jump 1000ms ease-in-out;
+}
+
+/* line 48, ../sass/_coins.scss */
+.coin[data-is-animated="1"][data-id="2"],
+.coin[data-is-animated="1"][data-id="4"],
+.coin[data-is-animated="1"][data-id="6"],
+.coin[data-is-animated="1"][data-id="8"] {
+  animation: right-coin-scale 5000ms linear;
+}
+/* line 54, ../sass/_coins.scss */
+.coin[data-is-animated="1"][data-id="2"] .coin-hp1,
+.coin[data-is-animated="1"][data-id="4"] .coin-hp1,
+.coin[data-is-animated="1"][data-id="6"] .coin-hp1,
+.coin[data-is-animated="1"][data-id="8"] .coin-hp1 {
+  animation: right-coin-roll-and-drop 5000ms linear;
+}
+/* line 58, ../sass/_coins.scss */
+.coin[data-is-animated="1"][data-id="2"] .coin-hp2,
+.coin[data-is-animated="1"][data-id="4"] .coin-hp2,
+.coin[data-is-animated="1"][data-id="6"] .coin-hp2,
+.coin[data-is-animated="1"][data-id="8"] .coin-hp2 {
   animation: right-coin-jump 1000ms ease-in-out;
 }
 
