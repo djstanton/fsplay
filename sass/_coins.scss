@@ -8,7 +8,7 @@ $coinH: 55px;
 
   width: $coinW;
   height: $coinW;
-  //transform: scale(0.5);
+  transform: scale(0.5);
   display: block;
   z-index: 2;
 }
@@ -31,10 +31,10 @@ $coinH: 55px;
 
 }
 
-.coin[data-is-animated="1"][data-id="0"],
-.coin[data-is-animated="1"][data-id="2"],
-.coin[data-is-animated="1"][data-id="4"],
-.coin[data-is-animated="1"][data-id="6"] {
+.coin[data-is-animated="1"][data-id="1"],
+.coin[data-is-animated="1"][data-id="3"],
+.coin[data-is-animated="1"][data-id="5"],
+.coin[data-is-animated="1"][data-id="7"] {
   animation: left-coin-scale 5000ms linear;
 
   .coin-hp1 {
@@ -45,10 +45,10 @@ $coinH: 55px;
   }
 }
 
-.coin[data-is-animated="1"][data-id="1"],
-.coin[data-is-animated="1"][data-id="3"],
-.coin[data-is-animated="1"][data-id="5"],
-.coin[data-is-animated="1"][data-id="7"] {
+.coin[data-is-animated="1"][data-id="2"],
+.coin[data-is-animated="1"][data-id="4"],
+.coin[data-is-animated="1"][data-id="6"],
+.coin[data-is-animated="1"][data-id="8"] {
   animation: right-coin-scale 5000ms linear;
 
   .coin-hp1 {
