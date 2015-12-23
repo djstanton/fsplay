@@ -1,0 +1,107 @@
+$DONE_ANIMATION_TIME: 500ms;
+
+%done-bg {
+  background: -webkit-linear-gradient(left,  rgb(200,139,38) 0%,rgb(234,199,34) 42%,rgb(255,251,209) 74%,rgb(243,243,40) 100%);
+  background: linear-gradient(to right,  rgb(200,139,38) 0%,rgb(234,199,34) 42%,rgb(255,251,209) 74%,rgb(243,243,40) 100%);
+}
+
+.coin-done {
+  position: absolute;
+  display: none;
+  top: 0;
+  width: $coinW;
+  height: $coinH;
+}
+
+.coin-done-hp1 {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: $coinW;
+  height: $coinH;
+  background: url('../img/test-coin.png');
+  background-size: cover;
+  animation: coin-done-1 $DONE_ANIMATION_TIME linear forwards;
+}
+
+.coin-done-hp2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: $coinW;
+  height: 8px;
+  background-image: linear-gradient();
+  margin: auto;
+  @extend %done-bg;
+  transform: scaleY(0);
+  animation: coin-done-2 $DONE_ANIMATION_TIME linear forwards;
+}
+
+.coin-done-hp3 {
+  width: $coinW;
+  height: $coinH;
+  background-image: linear-gradient();
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 50%;
+  @extend %done-bg;
+  animation: coin-done-3 $DONE_ANIMATION_TIME linear forwards;
+  opacity: 1;
+}
+
+.coin[data-is-done="1"][data-is-bomb="0"]{
+
+  .coin-done {
+    display: block
+  }
+
+  .coin-hp2 {
+    background: none;
+  }
+}
+
+
+@keyframes coin-done-1 {
+  0% {
+    transform: translateY(0px) scaleY(1);
+  }
+
+  50% {
+    transform: translate3D(0, $coinW /2 ,0) scaleY(0);
+  }
+  100% {
+    transform: translate3D(0, $coinW /2 ,0) scaleY(0);
+  }
+}
+
+@keyframes coin-done-2 {
+  0% {
+    transform: translateY(0px) scaleY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate3D(0, $coinW /2 + 2px ,0) scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3D(0, $coinW /2 + 2px ,0) scaleY(1) scaleX(0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes coin-done-3 {
+  0% {
+    transform: translateY(0px) scaleY(1);
+  }
+
+  50% {
+    transform: translate3D(0, $coinW /2 + 5px ,0) scaleY(0);
+  }
+
+  100% {
+    transform: translate3D(0, $coinW /2 + 5px ,0) scaleY(0);
+  }
+}
+
+
