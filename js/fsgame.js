@@ -1,3 +1,16 @@
+String.prototype.toMMSS = function () {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    var time    = minutes+':'+seconds;
+    return time;
+};
+
 fsgame = {
     fmLimit : 5000,
     stockfallTime: 1000,
@@ -15,7 +28,7 @@ fsgame = {
         8 : 54
     },
     step: 0,
-    gameInterval: 20000,
+    gameInterval: 120000,
     coinInterval: 500,
     playI: 0,
     x2: false,
@@ -31,7 +44,7 @@ fsgame = {
     },
     startGame: function(){
         this.init();
-        },
+    },
     startInterval: function(){
         var _this = this;
         _this.playI = setInterval(function(){
@@ -60,7 +73,7 @@ fsgame = {
         var _this = this, lastTime = _this.gameInterval/1000;
         _this.timerInterval = setInterval(function(){
             lastTime--;
-            $('.timer-text').html(lastTime);
+            $('.timer-text').html(lastTime.toString().toMMSS());
             if(!lastTime){
                 clearInterval(_this.timerInterval);
                 _this.finish();
@@ -70,6 +83,9 @@ fsgame = {
     nextStep:function(e){
         var _this = this, step = this.step,
             rightHand = $('.man-hand-even'), leftHand = $('.man-hand-odd');
+        if(_this.lockGame){
+            return;
+        }
         if(step && step == 1){
             _this.setActiveStep(2);
             setTimeout(function(){
@@ -126,8 +142,12 @@ fsgame = {
     },
     init: function(){
         var _this = this;
+        _this.lockGame = false;
         clearInterval(_this.playI);
         _this.startTimer();
+        _this.coinGenerator.collectedCoins = 0;
+        _this.gameInterval = 120000;
+        $(_this.scoreWrap).html('000000');
         _this.playI = setInterval(function(){
             _this.coinGenerator.makeCoin();
         }, _this.getRandomInt((_this.x2 ? 75 : 300), (_this.x2 ? 200 : 800)));
@@ -152,13 +172,15 @@ fsgame = {
     finish: function(){
         var _this = this;
         $('body').append('<div class="result">Вы собрали '+_this.coinGenerator.collectedCoins+' ФМ</div>');
-
+        _this.lockGame = true;
         _this.coinGenerator.collectedCoins = 0;
-        _this.gameInterval = 120000;
+        clearInterval(_this.playI);
+        $(_this.scoreWrap).html('000000');
         setTimeout(function(){
             _this.setActiveStep(0);
             $('.result').fadeOut();
-        }, 5000);
+            _this.lockGame = false;
+        }, 3000);
     },
     setFallTime: function(){
         var _this = this;
@@ -190,6 +212,10 @@ fsgame = {
 
         }
     },
+    addPads: function(coins){
+        var str = "" + coins, pad = "000000", ans = pad.substring(0, pad.length - str.length) + str;
+        return ans;
+    },
     checkCollect: function(data){
         var _this = this;
         setTimeout(function(){
@@ -199,10 +225,10 @@ fsgame = {
                     if(fsgame.coinGenerator.collectedCoins < 0){
                         fsgame.coinGenerator.collectedCoins = 0;
                     }
-                    $(_this.scoreWrap).html(fsgame.coinGenerator.collectedCoins);
+                    $(_this.scoreWrap).html(_this.addPads(fsgame.coinGenerator.collectedCoins));
                 } else {
                     fsgame.coinGenerator.collectedCoins++;
-                    $(_this.scoreWrap).html(fsgame.coinGenerator.collectedCoins);
+                    $(_this.scoreWrap).html(_this.addPads(fsgame.coinGenerator.collectedCoins));
                 }
             } else {
                 console.log('Уронил');
