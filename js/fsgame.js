@@ -59,7 +59,7 @@ fsgame = {
     stockfallTime: 1000,
     currentHand: 0,
     coinStorage: 0,
-    teamId: 1,
+    teamId: 0,
     keycodeConfig: {
         1: 48,
         2 : 55,
@@ -130,10 +130,40 @@ fsgame = {
             return;
         }
         if(step && step == 1){
-            _this.setActiveStep(2);
-            setTimeout(function(){
-                _this.play(1);
-            }, 1000);
+            switch (e.keyCode) {
+                case _this.keycodeConfig[1]:
+                    _this.teamId = 1;
+                    break;
+                case _this.keycodeConfig[2]:
+                    _this.teamId = 2;
+                    break;
+                case _this.keycodeConfig[3]:
+                    _this.teamId = 3;
+                    break;
+                case _this.keycodeConfig[4]:
+                    _this.teamId = 4;
+                    break;
+                case _this.keycodeConfig[5]:
+                    _this.teamId = 5;
+                    break;
+                case _this.keycodeConfig[6]:
+                    _this.teamId = 6;
+                    break;
+                case _this.keycodeConfig[7]:
+                    _this.teamId = 7;
+                    break;
+                case _this.keycodeConfig[8]:
+                    _this.teamId = 8;
+                    break;
+                default:
+                    break;
+            }
+            if(_this.teamId){
+                _this.setActiveStep(2);
+                setTimeout(function(){
+                    _this.play(_this.teamId);
+                }, 1000);
+            }
         } else if(step && step == 2){
             switch (e.keyCode) {
                 case _this.keycodeConfig[1]:
@@ -177,7 +207,6 @@ fsgame = {
                     leftHand.attr('data-pos', -1);
                     break;
             }
-            console.log(_this.currentHand);
         } else {
             _this.setActiveStep(1);
         }
@@ -190,6 +219,7 @@ fsgame = {
         _this.coinGenerator.collectedCoins = 0;
         _this.gameInterval = 120000;
         _this.currentHand = 0;
+        _this.teamId = 0;
         $(_this.scoreWrap).html('000000');
         _this.playI = setInterval(function(){
             _this.coinGenerator.makeCoin();
@@ -206,7 +236,6 @@ fsgame = {
     },
     play: function(teamId){
        var _this = this;
-        _this.teamId = teamId;
         mainTheme.stop();
         playTheme.start();
         setTimeout(function(){
