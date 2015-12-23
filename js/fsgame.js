@@ -1,3 +1,46 @@
+function Sound(source,volume,loop)
+{
+    this.source=source;
+    this.volume=volume;
+    this.loop=loop;
+    var son;
+    this.son=son;
+    this.finish=false;
+    this.stop=function()
+    {
+        document.body.removeChild(this.son);
+    }
+    this.start=function()
+    {
+        if(this.finish)return false;
+        this.son=document.createElement("embed");
+        this.son.setAttribute("src",this.source);
+        this.son.setAttribute("hidden","true");
+        this.son.setAttribute("volume",this.volume);
+        this.son.setAttribute("autostart","true");
+        this.son.setAttribute("loop",this.loop);
+        document.body.appendChild(this.son);
+    }
+    this.remove=function()
+    {
+        document.body.removeChild(this.son);
+        this.finish=true;
+    }
+    this.init=function(volume,loop)
+    {
+        this.finish=false;
+        this.volume=volume;
+        this.loop=loop;
+    }
+}
+
+var coin=new Sound("mario.mp3",100,false);
+var errorSound =new Sound("bomb.mp3",100,false);
+var mainTheme=new Sound("moneysong.mp3",80,true);
+var playTheme=new Sound("go.mp3",80,true);
+var finishTheme=new Sound("swag.mp3",80,true);
+mainTheme.start();
+
 String.prototype.toMMSS = function () {
     var sec_num = parseInt(this, 10); // don't forget the second param
     var hours   = Math.floor(sec_num / 3600);
@@ -14,7 +57,7 @@ String.prototype.toMMSS = function () {
 fsgame = {
     fmLimit : 5000,
     stockfallTime: 1000,
-    currentHand: 1,
+    currentHand: 0,
     coinStorage: 0,
     teamId: 1,
     keycodeConfig: {
@@ -28,7 +71,7 @@ fsgame = {
         8 : 54
     },
     step: 0,
-    gameInterval: 120000,
+    gameInterval: 20000,
     coinInterval: 500,
     playI: 0,
     x2: false,
@@ -97,7 +140,6 @@ fsgame = {
                     _this.currentHand = 1;
                     leftHand.attr('data-pos', 7);
                     rightHand.attr('data-pos', -1);
-                    debugger;
                     break;
                 case _this.keycodeConfig[2]:
                     _this.currentHand = 2;
@@ -147,6 +189,7 @@ fsgame = {
         _this.startTimer();
         _this.coinGenerator.collectedCoins = 0;
         _this.gameInterval = 120000;
+        _this.currentHand = 0;
         $(_this.scoreWrap).html('000000');
         _this.playI = setInterval(function(){
             _this.coinGenerator.makeCoin();
@@ -164,23 +207,33 @@ fsgame = {
     play: function(teamId){
        var _this = this;
         _this.teamId = teamId;
+        mainTheme.stop();
+        playTheme.start();
         setTimeout(function(){
             _this.init();
         }, 3000);
 
     },
     finish: function(){
-        var _this = this;
+        var _this = this, rightHand = $('.man-hand-even'), leftHand = $('.man-hand-odd');
         $('body').append('<div class="result">Вы собрали '+_this.coinGenerator.collectedCoins+' ФМ</div>');
         _this.lockGame = true;
         _this.coinGenerator.collectedCoins = 0;
         clearInterval(_this.playI);
         $(_this.scoreWrap).html('000000');
+        _this.currentHand = 0;
+        $('.timer-text').html('120'.toString().toMMSS());
+        leftHand.attr('data-pos', -1);
+        rightHand.attr('data-pos', -1);
+        playTheme.stop();
+        finishTheme.start();
         setTimeout(function(){
             _this.setActiveStep(0);
+            finishTheme.stop();
+            mainTheme.start();
             $('.result').fadeOut();
             _this.lockGame = false;
-        }, 3000);
+        }, 7000);
     },
     setFallTime: function(){
         var _this = this;
@@ -195,12 +248,13 @@ fsgame = {
             var data = {
                 slotId: fsgame.getRandomInt(0,7),
                 isBomb: fsgame.getRandomInt(0, 7),
-                speed: 1600
+                speed: 1600,
+                id: fsgame.coinGenerator.id
             };
             if(data.isBomb !== 1){
                 fsgame.coinGenerator.coinsCounter++;
             }
-            $.tmpl('<div class="coin" data-id="${slotId}" data-speed="${speed}" data-is-animated="1" data-is-caught="0" data-is-bomb="${isBomb}"> <div class="coin-hp1"> <div class="coin-hp2"></div><div class="coin-boom coin-boom-1"></div> <div class="coin-boom coin-boom-2"></div> <div class="coin-boom coin-boom-3"></div> <div class="coin-boom coin-boom-4"></div> <div class="coin-boom coin-boom-5"></div> <div class="coin-boom coin-boom-6"></div> <div class="coin-boom coin-boom-7"></div> <div class="coin-boom coin-boom-8"></div> <div class="coin-boom-core"></div> </div></div>', data).appendTo($('[data-kit-id ='+data.slotId+']').find('.kit-body')[0]);
+            $.tmpl('<div class="coin coin-${id}" data-id="${slotId}" data-speed="${speed}" data-is-animated="1" data-is-caught="0" data-is-bomb="${isBomb}"> <div class="coin-hp1"> <div class="coin-hp2"></div><div class="coin-boom coin-boom-1"></div> <div class="coin-boom coin-boom-2"></div> <div class="coin-boom coin-boom-3"></div> <div class="coin-boom coin-boom-4"></div> <div class="coin-boom coin-boom-5"></div> <div class="coin-boom coin-boom-6"></div> <div class="coin-boom coin-boom-7"></div> <div class="coin-boom coin-boom-8"></div> <div class="coin-boom-core"></div> </div></div>', data).appendTo($('[data-kit-id ='+data.slotId+']').find('.kit-body')[0]);
             $('[data-kit-id ='+data.slotId+']').attr('data-is-animated', 1);
             fsgame.checkCollect(data);
             fsgame.coinGenerator.id++;
@@ -225,9 +279,15 @@ fsgame = {
                     if(fsgame.coinGenerator.collectedCoins < 0){
                         fsgame.coinGenerator.collectedCoins = 0;
                     }
+                    errorSound.start();
                     $(_this.scoreWrap).html(_this.addPads(fsgame.coinGenerator.collectedCoins));
                 } else {
                     fsgame.coinGenerator.collectedCoins++;
+                    coin.start();
+                    $('.coin-'+data.id).attr('data-is-done', 1);
+                    setTimeout(function(){
+                        $('.coin-'+data.id).remove();
+                    }, 2000);
                     $(_this.scoreWrap).html(_this.addPads(fsgame.coinGenerator.collectedCoins));
                 }
             } else {
