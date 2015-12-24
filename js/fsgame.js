@@ -261,6 +261,9 @@ fsgame = {
        var _this = this;
         mainTheme.stop();
         playTheme.start();
+
+        _this.countdown(3);
+
         setTimeout(function(){
             _this.init();
         }, 3000);
@@ -289,6 +292,25 @@ fsgame = {
             _this.lockGame = false;
         }, 7000);
     },
+
+    countdown: function(seconds){
+        var $node = $('#countdown');
+        $node.text(seconds);
+        $node.attr('data-is-count', 1);
+
+        var interval = setInterval(function neg(){
+            $node.text(seconds);
+            seconds = seconds - 1;
+
+            if (seconds === -1) {
+                $node.attr('data-is-count', 0);
+                clearInterval(interval);
+            }
+
+            return neg;
+        }(), 1000);
+    },
+
     setFallTime: function(){
         var _this = this;
         _this.stockfallTime = _this.stockfallTime + _this.getRandomInt(-200, 500);

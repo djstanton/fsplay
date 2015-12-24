@@ -212,3 +212,26 @@ $game-height: 1050px;
   top: 0;
   z-index: 1;
 }
+
+.countdown[data-is-count="1"]{
+
+  transform: scale(1);
+}
+
+.countdown {
+  transition: transform 0.3s ease-out;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  color: #fff;
+  font-size: 170px;
+  transform: scale(0);
+
+  width: 100px;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-shadow: 0 5px 5px rgba(0,0,0,.2);
+}
+

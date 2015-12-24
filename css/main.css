@@ -219,6 +219,28 @@ body:after {
   z-index: 1;
 }
 
+/* line 216, ../sass/_style.scss */
+.countdown[data-is-count="1"] {
+  transform: scale(1);
+}
+
+/* line 221, ../sass/_style.scss */
+.countdown {
+  transition: transform 0.3s ease-out;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  color: #fff;
+  font-size: 170px;
+  transform: scale(0);
+  width: 100px;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
 /* line 2, ../sass/_static_elems.scss */
 .score {
   width: 447px;
