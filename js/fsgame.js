@@ -245,7 +245,7 @@ fsgame = {
     },
     finish: function(){
         var _this = this, rightHand = $('.man-hand-even'), leftHand = $('.man-hand-odd');
-        $('body').append('<div class="result">Вы собрали '+_this.coinGenerator.collectedCoins+' ФМ</div>');
+        $('body').append('<div class="result"><div class="result-text-shadow">Вы собрали '+_this.coinGenerator.collectedCoins+' ФМ </div> <div class="result-text"> Вы собрали '+_this.coinGenerator.collectedCoins+' ФМ</div></div>');
         _this.lockGame = true;
         _this.coinGenerator.collectedCoins = 0;
         clearInterval(_this.playI);
@@ -262,7 +262,7 @@ fsgame = {
             mainTheme.start();
             $('.result').fadeOut();
             _this.lockGame = false;
-        }, 7000);
+        }, 7000);12
     },
     setFallTime: function(){
         var _this = this;
