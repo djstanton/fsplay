@@ -71,10 +71,11 @@ fsgame = {
         8 : 54
     },
     step: 0,
-    gameInterval: 20000,
+    gameInterval: 120000,
     coinInterval: 500,
     playI: 0,
     x2: false,
+    sale: false,
     scoreWrap: '.score-text',
     isStarted: false,
     getRandomInt: function(min, max){
@@ -98,15 +99,32 @@ fsgame = {
     startX2: function(){
         var _this = this;
         _this.x2 = 1;
-        _this.startGame();
+        $('.sale-banner').eq(0).attr('data-position',1);
+        _this.init();
         setTimeout(function(){
             _this.stopX2();
-        }, 5000);
+        }, 15000);
     },
     stopX2: function(){
         var _this = this;
         _this.x2 = 0;
-        _this.startGame();
+        $('.sale-banner').eq(0).attr('data-position',2);
+        _this.init();
+    },
+    startSale: function(){
+        var _this = this;
+        _this.sale = 1;
+        $('.sale-banner').eq(1).attr('data-position',1);
+        _this.init();
+        setTimeout(function(){
+            _this.stopSale();
+        }, 25000);
+    },
+    stopSale: function(){
+        var _this = this;
+        _this.sale = 0;
+        $('.sale-banner').eq(1).attr('data-position',2);
+        _this.init();
     },
     setActiveStep:function(step){
         $('.fs-game').attr('data-state',step);
@@ -215,24 +233,29 @@ fsgame = {
         var _this = this;
         _this.lockGame = false;
         clearInterval(_this.playI);
-        _this.startTimer();
-        _this.coinGenerator.collectedCoins = 0;
-        _this.gameInterval = 120000;
-        _this.currentHand = 0;
-        _this.teamId = 0;
-        $(_this.scoreWrap).html('000000');
-        _this.playI = setInterval(function(){
-            _this.coinGenerator.makeCoin();
-        }, _this.getRandomInt((_this.x2 ? 75 : 300), (_this.x2 ? 200 : 800)));
-
-        if(!_this.isStarted){
-            setTimeout(function(){
+        if(_this.isStarted){
                 clearInterval(_this.playI);
-                console.log('Выпало '+fsgame.coinGenerator.coinsCounter+' монет');
-            }, _this.gameInterval);
+                _this.playI = setInterval(function(){
+                _this.coinGenerator.makeCoin();
+            }, _this.getRandomInt(((_this.x2 || _this.sale) ? 75 : 300), ((_this.x2 || _this.sale) ? 200 : 800)));
+        } else {
+            _this.startTimer();
+            _this.coinGenerator.collectedCoins = 0;
+            _this.gameInterval = 120000;
+            _this.currentHand = 0;
+            _this.teamId = 0;
+            $(_this.scoreWrap).html('000000');
+            _this.x2Timeout = setTimeout(function(){
+                _this.startX2();
+            }, 10000);
+            _this.saleTimeout = setTimeout(function(){
+                _this.startSale();
+            }, 45000);
+            _this.playI = setInterval(function(){
+                _this.coinGenerator.makeCoin();
+            }, _this.getRandomInt(((_this.x2 || _this.sale) ? 75 : 300), ((_this.x2 || _this.sale) ? 200 : 800)));
+            _this.isStarted = true;
         }
-
-        _this.isStarted = true;
     },
     play: function(teamId){
        var _this = this;
@@ -249,6 +272,8 @@ fsgame = {
         _this.lockGame = true;
         _this.coinGenerator.collectedCoins = 0;
         clearInterval(_this.playI);
+        clearTimeout(_this.saleTimeout);
+        clearTimeout(_this.x2Timeout);
         $(_this.scoreWrap).html('000000');
         _this.currentHand = 0;
         $('.timer-text').html('120'.toString().toMMSS());
@@ -262,7 +287,7 @@ fsgame = {
             mainTheme.start();
             $('.result').fadeOut();
             _this.lockGame = false;
-        }, 7000);12
+        }, 7000);
     },
     setFallTime: function(){
         var _this = this;
