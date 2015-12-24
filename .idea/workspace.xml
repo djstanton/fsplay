@@ -88,8 +88,8 @@
       <file leaf-file-name="fsgame.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/fsgame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52418447" vertical-offset="3903" max-vertical-offset="5848">
-              <caret line="257" column="28" selection-start-line="257" selection-start-column="28" selection-end-line="257" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.10348707" vertical-offset="3903" max-vertical-offset="5848">
+              <caret line="235" column="5" selection-start-line="235" selection-start-column="5" selection-end-line="235" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -625,8 +625,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fsgame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52418447" vertical-offset="3903" max-vertical-offset="5848">
-          <caret line="257" column="28" selection-start-line="257" selection-start-column="28" selection-end-line="257" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.10348707" vertical-offset="3903" max-vertical-offset="5848">
+          <caret line="235" column="5" selection-start-line="235" selection-start-column="5" selection-end-line="235" selection-end-column="5" />
           <folding />
         </state>
       </provider>
