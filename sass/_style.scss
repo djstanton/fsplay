@@ -41,8 +41,9 @@ $game-height: 1050px;
 }
 
 .fs-game[data-state="2"]{
-
   transform: translate3D(0px, -$game-height * 2 , 0px);
+
+
 }
 
 .fs-game-bg {
@@ -177,9 +178,8 @@ $game-height: 1050px;
   float: right;
 }
 
-.sale-banner {
-  display: none;
 
+.sale-banner {
   width: 440px;
   height: 100px;
   background: url('../img/test-banner.png');
@@ -189,22 +189,28 @@ $game-height: 1050px;
   right: 0;
   margin: auto;
 
+  transition: opacity 10ms linear;
   transition: transform 1s ease-out;
   transform: translate3D(0px, 0px, 0px);
 }
 
 .sale-banner[data-position="0"] {
   transform: translate3D(0px, -100px, 0px);
+  opacity: 0;
 }
 
 .sale-banner[data-position="1"] {
   transform: translate3D(0px, 80px, 0px);
+  opacity: 1;
 }
 
 .sale-banner[data-position="2"] {
   transition: transform 2s ease-out;
   transform: translate3D(0px, 100vh, 0px);
+  opacity: 1;
 }
+
+
 .result {
   position: absolute;
   left: 50%;
@@ -214,9 +220,45 @@ $game-height: 1050px;
   height: 400px;
   margin-top: -200px;
   font-size: 120px;
-  color: red;
   z-index: 100;
   text-align: center;
-  font-family: Arial;
-  font-weight: bold;
+  font-family: Trebuchet MS;
+  font-weight: bolder;
+
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    //background: url('../img/result-bg.png');
+
+    background: rgba(100,200,255,0.8);
+    width: $game-width;
+    height: $game-height;
+    background-size: cover;
+  }
+}
+
+
+.result-text {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffe83d), color-stop(100%, #faac00));
+  background-image: -webkit-linear-gradient(#ffe83d,#faac00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+  position: relative;
+  z-index: 4;
+}
+
+.result-text-shadow {
+  background: none;
+  content: attr(data-text);
+  left: 0;
+  position: absolute;
+  text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+  top: 0;
+  z-index: 1;
 }
