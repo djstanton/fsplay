@@ -71,7 +71,7 @@ fsgame = {
         8 : 54
     },
     step: 0,
-    gameInterval: 5000,
+    gameInterval: 120000,
     coinInterval: 500,
     playI: 0,
     x2: false,
