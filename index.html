@@ -43,72 +43,78 @@
 
         <div class="select-team">
             <div class="select-team-inner">
-                <div class="select-team-block">
+                <div class="select-team-block select-team-block-1" data-is-selected="0">
                     <div class="select-team-number">
                         1
                     </div>
+                    <div class="select-team-ico"></div>
                 </div>
 
-                <div class="select-team-block">
+                <div class="select-team-block select-team-block-2" data-is-selected="0">
                     <div class="select-team-number">
                         2
                     </div>
+                    <div class="select-team-ico"></div>
                 </div>
 
-                <div class="select-team-block">
+                <div class="select-team-block select-team-block-3" data-is-selected="0">
                     <div class="select-team-number">
                         3
                     </div>
+                    <div class="select-team-ico"></div>
                 </div>
 
-                <div class="select-team-block">
+                <div class="select-team-block select-team-block-4" data-is-selected="0">
                     <div class="select-team-number">
                         4
                     </div>
+                    <div class="select-team-ico"></div>
                 </div>
 
-                <div class="select-team-block">
+                <div class="select-team-block select-team-block-5" data-is-selected="0">
                     <div class="select-team-number">
                         5
                     </div>
+                    <div class="select-team-ico"></div>
                 </div>
 
-                <div class="select-team-block">
+                <div class="select-team-block select-team-block-6" data-is-selected="0">
                     <div class="select-team-number">
                         6
                     </div>
+                    <div class="select-team-ico"></div>
                 </div>
 
-                <div class="select-team-block">
+                <div class="select-team-block select-team-block-7" data-is-selected="0">
                     <div class="select-team-number">
                         7
                     </div>
+                    <div class="select-team-ico"></div>
                 </div>
 
-                <div class="select-team-block">
+                <div class="select-team-block select-team-block-8" data-is-selected="0">
                     <div class="select-team-number">
                         8
                     </div>
+                    <div class="select-team-ico"></div>
                 </div>
-            </div>
-        </div>
-
-
-
-
-        <div id="phrase" class="phrase" data-is-animated="0">
-            <div id="phrase-text" class="phrase-text">
-
-            </div>
-
-            <div class="phrase-corner">
-                <div class="phrase-corner-hp phrase-corner-hp1"></div>
-                <div class="phrase-corner-hp phrase-corner-hp2"></div>
-                <div class="phrase-corner-hp phrase-corner-hp3"></div>
             </div>
         </div>
 
         <div class="man">
+
+            <div id="phrase" class="phrase" data-is-animated="0">
+                <div id="phrase-text" class="phrase-text">
+
+                </div>
+
+                <div class="phrase-corner">
+                    <div class="phrase-corner-hp phrase-corner-hp1"></div>
+                    <div class="phrase-corner-hp phrase-corner-hp2"></div>
+                    <div class="phrase-corner-hp phrase-corner-hp3"></div>
+                </div>
+            </div>
+
             <div class="man-body">
                 <div id="hand-even" class="man-hand man-hand-even" data-pos="-1">
 
@@ -501,6 +507,9 @@
     </div>
 </div>
 
+<script src="js/fsgame.js"></script>
+<script src="js/phrase-generator.js"></script>
+
 <script>
     // For coin test
     ( function() {
@@ -527,6 +536,12 @@
     })();
 
     (function () {
+        setInterval( function(){
+            phraseGenerator.showPhrase('good');
+        }, 10000);
+    })();
+
+    (function () {
         var kits = document.getElementsByClassName('kit');
 
         for (var i = 0; i < kits.length; i++) {
@@ -549,10 +564,6 @@
     })();
 
 </script>
-
-
-<script src="js/fsgame.js"></script>
-<script src="js/phrase-generator.js"></script>
 
 </body>
 </html>

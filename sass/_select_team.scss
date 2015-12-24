@@ -1,0 +1,93 @@
+.select-team {
+  position: relative;
+  text-align: center;
+  display: block;
+  height: $game-height;
+}
+
+.select-team-block[data-is-selected='1'] {
+  animation: select-team 500ms ease-in-out;
+}
+
+.select-team-inner {
+  width: image-width('../img/green-block.png') * 4 + 200px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.select-team-ico{
+  transform: translate3D(0px,0px,0px);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: image-width('../img/teams/1.png');
+  height: image-height('../img/teams/1.png');
+}
+
+@for $i from 1 through 8 {
+  .select-team-block-#{$i} {
+    .select-team-ico{
+      background: url('../img/teams/#{$i}.png');
+    }
+  }
+}
+
+.select-team-block {
+  vertical-align: top;
+  margin: 40px 20px;
+  background: url('../img/green-block.png');
+  width: image-width('../img/green-block.png');
+  height: image-height('../img/green-block.png');
+  position: relative;
+  z-index: 1;
+  float: left;
+}
+
+.select-team-block:nth-of-type(2n+1){
+  background: url('../img/red-block.png');
+}
+
+.select-team-number {
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  font-size: 40px;
+  color: #000;
+  font-family: "trebuchet ms";
+  background: #fff;
+  border-radius: 1000px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40px;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+@keyframes select-team {
+  0% {
+    transform: scale(1);
+  }
+
+  33% {
+    transform: scale(0.6);
+  }
+
+  66% {
+    transform: scale(1.3);
+  }
+
+  100%{
+    transform: scale(1.0);
+  }
+}

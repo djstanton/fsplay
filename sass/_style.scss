@@ -77,56 +77,6 @@ $game-height: 1050px;
   height: $game-height;
 }
 
-.select-team {
-  position: relative;
-  text-align: center;
-  display: block;
-  height: $game-height;
-}
-
-.select-team-inner {
-  width: image-width('../img/green-block.png') * 4 + 200px;
-  text-align: center;
-  display: block;
-  position: absolute;
-  top: 200px;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-.select-team-block {
-  vert-align: top;
-  margin: 40px 20px;
-  background: url('../img/green-block.png');
-  width: image-width('../img/green-block.png');
-  height: image-height('../img/green-block.png');
-  position: relative;
-  z-index: 1;
-  float: left;
-}
-
-.select-team-block:nth-of-type(2n+1){
-  background: url('../img/red-block.png');
-}
-
-.select-team-number {
-  height: 80px;
-  width: 80px;
-  line-height: 80px;
-  font-size: 40px;
-  color: #000;
-  font-family: "trebuchet ms";
-  background: #fff;
-  border-radius: 1000px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -40px;
-  margin: auto;
-  text-align: center;
-}
-
 
 .welcome-text {
   font-family: trebuchet ms;
