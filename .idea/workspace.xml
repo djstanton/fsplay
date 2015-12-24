@@ -75,21 +75,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_style.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sass/_style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.012658" vertical-offset="3049" max-vertical-offset="4590">
-              <caret line="198" column="43" selection-start-line="198" selection-start-column="43" selection-end-line="198" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.27262044" vertical-offset="2947" max-vertical-offset="4573">
+              <caret line="187" column="10" selection-start-line="187" selection-start-column="10" selection-end-line="187" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fsgame.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fsgame.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/fsgame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10348707" vertical-offset="3903" max-vertical-offset="5848">
-              <caret line="235" column="5" selection-start-line="235" selection-start-column="5" selection-end-line="235" selection-end-column="5" />
+            <state vertical-scroll-proportion="-5.714286" vertical-offset="3903" max-vertical-offset="5848">
+              <caret line="239" column="26" selection-start-line="239" selection-start-column="26" selection-end-line="239" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -98,8 +98,8 @@
       <file leaf-file-name="_bomb.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sass/_bomb.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5185184" vertical-offset="0" max-vertical-offset="748">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+            <state vertical-scroll-proportion="-1.574074" vertical-offset="0" max-vertical-offset="748">
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -138,10 +138,10 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="24871">
+            <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="24888">
               <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
-                <marker date="1450917732681" expanded="true" signature="30895:30896" placeholder="..." />
+                <marker date="1450918328702" expanded="true" signature="30919:30920" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -198,9 +198,9 @@
         <option value="$PROJECT_DIR$/sass/_conis_boom.scss" />
         <option value="$PROJECT_DIR$/sass/_coin_done.scss" />
         <option value="$PROJECT_DIR$/sass/_static_elems.scss" />
-        <option value="$PROJECT_DIR$/sass/_style.scss" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/fsgame.js" />
+        <option value="$PROJECT_DIR$/sass/_style.scss" />
       </list>
     </option>
   </component>
@@ -476,7 +476,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="24242">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1450917732681" expanded="true" signature="30895:30896" placeholder="..." />
+            <marker date="1450918328702" expanded="true" signature="30919:30920" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -562,7 +562,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="24871">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <marker date="1450917732681" expanded="true" signature="30895:30896" placeholder="..." />
+            <marker date="1450918328702" expanded="true" signature="30919:30920" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -571,14 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/_bomb.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5185184" vertical-offset="0" max-vertical-offset="748">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -607,14 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/_style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.012658" vertical-offset="3049" max-vertical-offset="4590">
-          <caret line="198" column="43" selection-start-line="198" selection-start-column="43" selection-end-line="198" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.148148" vertical-offset="17" max-vertical-offset="9571">
@@ -625,8 +609,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fsgame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10348707" vertical-offset="3903" max-vertical-offset="5848">
-          <caret line="235" column="5" selection-start-line="235" selection-start-column="5" selection-end-line="235" selection-end-column="5" />
+        <state vertical-scroll-proportion="-5.714286" vertical-offset="3903" max-vertical-offset="5848">
+          <caret line="239" column="26" selection-start-line="239" selection-start-column="26" selection-end-line="239" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/_bomb.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.574074" vertical-offset="0" max-vertical-offset="748">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/_style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27262044" vertical-offset="2947" max-vertical-offset="4573">
+          <caret line="187" column="10" selection-start-line="187" selection-start-column="10" selection-end-line="187" selection-end-column="10" />
           <folding />
         </state>
       </provider>

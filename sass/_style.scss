@@ -180,8 +180,6 @@ $game-height: 1050px;
 
 
 .sale-banner {
-  display: none;
-
   width: 440px;
   height: 100px;
   background: url('../img/test-banner.png');
@@ -191,24 +189,25 @@ $game-height: 1050px;
   right: 0;
   margin: auto;
 
+  transition: opacity 10ms linear;
   transition: transform 1s ease-out;
   transform: translate3D(0px, 0px, 0px);
 }
 
 .sale-banner[data-position="0"] {
   transform: translate3D(0px, -100px, 0px);
-
+  opacity: 0;
 }
 
 .sale-banner[data-position="1"] {
   transform: translate3D(0px, 80px, 0px);
-  display: block;
+  opacity: 1;
 }
 
 .sale-banner[data-position="2"] {
   transition: transform 2s ease-out;
   transform: translate3D(0px, 100vh, 0px);
-  display: block;
+  opacity: 1;
 }
 
 
