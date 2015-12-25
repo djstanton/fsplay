@@ -168,7 +168,7 @@ $positions-even :
 
   margin: auto;
 
-  animation: man-head-1 2s ease-out infinite;
+  animation: man-head-2 4s ease-out infinite;
 }
 
 .man-eye {
@@ -177,7 +177,6 @@ $positions-even :
   width: image-width('../img/man-eye.png');
   height: image-height('../img/man-eye.png');
 
-  animation: man-head-1 2s ease-out infinite;
 }
 
 .man-eye-1 {
@@ -204,6 +203,31 @@ $positions-even :
 
   100% {
     transform: translate3D(-5px,0px,0px) rotate(5deg);
+  }
+}
+
+$man-head-delta: 12px;
+$man-head-grad: 7deg;
+
+@keyframes man-head-2 {
+  0% {
+    transform: translate3D(-$man-head-delta,-$man-head-delta/2,0px) rotate(-$man-head-grad);
+  }
+
+  25% {
+    transform: translate3D($man-head-delta,$man-head-delta/2,0px) rotate($man-head-grad);
+  }
+
+  50% {
+    transform: translate3D(-$man-head-delta,$man-head-delta/2,0px) rotate(-$man-head-grad);
+  }
+
+  75% {
+    transform: translate3D($man-head-delta,-$man-head-delta/2,0px) rotate($man-head-grad);
+  }
+
+  100% {
+    transform: translate3D(-$man-head-delta,-$man-head-delta/2,0px) rotate(-$man-head-grad);
   }
 }
 

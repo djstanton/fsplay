@@ -592,7 +592,7 @@ body:after {
   left: 12px;
   right: 0;
   margin: auto;
-  animation: man-head-1 2s ease-out infinite;
+  animation: man-head-2 4s ease-out infinite;
 }
 
 /* line 174, ../sass/_hands.scss */
@@ -601,17 +601,16 @@ body:after {
   background: url("../img/man-eye.png") no-repeat;
   width: 20px;
   height: 20px;
-  animation: man-head-1 2s ease-out infinite;
 }
 
-/* line 183, ../sass/_hands.scss */
+/* line 182, ../sass/_hands.scss */
 .man-eye-1 {
   top: 95px;
   left: 113px;
   animation: man-head-1 2s ease-out infinite;
 }
 
-/* line 189, ../sass/_hands.scss */
+/* line 188, ../sass/_hands.scss */
 .man-eye-2 {
   top: 95px;
   left: 33px;
@@ -627,6 +626,23 @@ body:after {
   }
   100% {
     transform: translate3D(-5px, 0px, 0px) rotate(5deg);
+  }
+}
+@keyframes man-head-2 {
+  0% {
+    transform: translate3D(-12px, -6px, 0px) rotate(-7deg);
+  }
+  25% {
+    transform: translate3D(12px, 6px, 0px) rotate(7deg);
+  }
+  50% {
+    transform: translate3D(-12px, 6px, 0px) rotate(-7deg);
+  }
+  75% {
+    transform: translate3D(12px, -6px, 0px) rotate(7deg);
+  }
+  100% {
+    transform: translate3D(-12px, -6px, 0px) rotate(-7deg);
   }
 }
 /* line 2, ../sass/_kits.scss */
