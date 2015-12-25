@@ -52,7 +52,10 @@
   float: left;
 }
 
-.select-team-block:nth-of-type(2n+1){
+.select-team-block-1,
+.select-team-block-2,
+.select-team-block-5,
+.select-team-block-6 {
   background: url('../img/red-block.png');
 }
 
