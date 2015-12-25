@@ -153,3 +153,60 @@ $positions-even :
 .man-hand-even  {
 
 }
+
+
+
+.man-head{
+  position: absolute;
+  background: url('../img/man-head.png') no-repeat;
+  width: image-width('../img/man-head.png');
+  height: image-height('../img/man-head.png');
+
+  top: 7px;
+  left: 12px;
+  right: 0;
+
+  margin: auto;
+
+  animation: man-head-1 2s ease-out infinite;
+}
+
+.man-eye {
+  position: absolute;
+  background: url('../img/man-eye.png') no-repeat;
+  width: image-width('../img/man-eye.png');
+  height: image-height('../img/man-eye.png');
+
+  animation: man-head-1 2s ease-out infinite;
+}
+
+.man-eye-1 {
+  top: 95px;
+  left: 113px;
+  animation: man-head-1 2s ease-out infinite;
+}
+
+.man-eye-2 {
+  top: 95px;
+  left: 33px;
+  animation: man-head-1 2s ease-out infinite;
+}
+
+
+@keyframes man-head-1 {
+  0% {
+    transform: translate3D(-5px,0px,0px) rotate(5deg);
+  }
+
+  50% {
+    transform: translate3D(5px,0px,0px) rotate(-5deg);
+  }
+
+  100% {
+    transform: translate3D(-5px,0px,0px) rotate(5deg);
+  }
+}
+
+
+
+

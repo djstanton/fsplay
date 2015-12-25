@@ -582,6 +582,53 @@ body:after {
   transform: scaleX(-1);
 }
 
+/* line 159, ../sass/_hands.scss */
+.man-head {
+  position: absolute;
+  background: url("../img/man-head.png") no-repeat;
+  width: 166px;
+  height: 220px;
+  top: 7px;
+  left: 12px;
+  right: 0;
+  margin: auto;
+  animation: man-head-1 2s ease-out infinite;
+}
+
+/* line 174, ../sass/_hands.scss */
+.man-eye {
+  position: absolute;
+  background: url("../img/man-eye.png") no-repeat;
+  width: 20px;
+  height: 20px;
+  animation: man-head-1 2s ease-out infinite;
+}
+
+/* line 183, ../sass/_hands.scss */
+.man-eye-1 {
+  top: 95px;
+  left: 113px;
+  animation: man-head-1 2s ease-out infinite;
+}
+
+/* line 189, ../sass/_hands.scss */
+.man-eye-2 {
+  top: 95px;
+  left: 33px;
+  animation: man-head-1 2s ease-out infinite;
+}
+
+@keyframes man-head-1 {
+  0% {
+    transform: translate3D(-5px, 0px, 0px) rotate(5deg);
+  }
+  50% {
+    transform: translate3D(5px, 0px, 0px) rotate(-5deg);
+  }
+  100% {
+    transform: translate3D(-5px, 0px, 0px) rotate(5deg);
+  }
+}
 /* line 2, ../sass/_kits.scss */
 .kits {
   position: relative;
@@ -954,6 +1001,128 @@ body:after {
   }
   100% {
     transform: rotate(deg);
+  }
+}
+/* line 2, ../sass/_dogs.scss */
+.dog {
+  position: absolute;
+  left: 20px;
+  bottom: 17px;
+  width: 100px;
+  height: 150px;
+  animation: dog-4 3500ms ease-out infinite;
+}
+
+/* line 10, ../sass/_dogs.scss */
+.dog-hp1 {
+  position: absolute;
+  background: url("../img/dogs/1.png") no-repeat;
+  width: 110px;
+  height: 79px;
+  bottom: 60px;
+  z-index: 5;
+  animation: dog-1 3000ms ease-out infinite;
+}
+
+/* line 21, ../sass/_dogs.scss */
+.dog-hp2 {
+  position: absolute;
+  background: url("../img/dogs/2.png") no-repeat;
+  width: 77px;
+  height: 95px;
+  bottom: 0;
+  left: 15px;
+  z-index: 3;
+}
+
+/* line 32, ../sass/_dogs.scss */
+.dog-hp3 {
+  position: absolute;
+  background: url("../img/dogs/3.png") no-repeat;
+  width: 22px;
+  height: 63px;
+  bottom: 0;
+  left: 6px;
+  animation: dog-2 800ms ease-out infinite;
+  transform-origin: 100% 100%;
+}
+
+/* line 45, ../sass/_dogs.scss */
+.dog-2 {
+  position: absolute;
+  right: 20px;
+  bottom: 27px;
+  width: 100px;
+  height: 150px;
+  animation: dog-4 2500ms ease-out infinite;
+}
+
+/* line 54, ../sass/_dogs.scss */
+.dog-hp4 {
+  position: absolute;
+  background: url("../img/dogs/4.png") no-repeat;
+  width: 102px;
+  height: 79px;
+  bottom: 56px;
+  left: 10px;
+  z-index: 5;
+  animation: dog-1 3500ms ease-out infinite;
+}
+
+/* line 66, ../sass/_dogs.scss */
+.dog-hp5 {
+  position: absolute;
+  background: url("../img/dogs/5.png") no-repeat;
+  width: 87px;
+  height: 95px;
+  bottom: 0;
+  left: 15px;
+  z-index: 3;
+}
+
+/* line 77, ../sass/_dogs.scss */
+.dog-hp6 {
+  position: absolute;
+  background: url("../img/dogs/6.png") no-repeat;
+  width: 20px;
+  height: 52px;
+  bottom: 11px;
+  left: 85px;
+  animation: dog-2 500ms ease-out infinite;
+  transform-origin: 100% 100%;
+}
+
+@keyframes dog-2 {
+  0% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes dog-1 {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+@keyframes dog-4 {
+  0% {
+    transform: rotate(2deg) translate3D(10px, 0px, 0px);
+  }
+  50% {
+    transform: rotate(-2deg) translate3D(0px, 0px, 0px);
+  }
+  100% {
+    transform: rotate(2deg) translate3D(10px, 0px, 0px);
   }
 }
 /* line 1, ../sass/_select_team.scss */

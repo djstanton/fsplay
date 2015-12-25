@@ -1,0 +1,131 @@
+
+.dog {
+  position: absolute;
+  left: 20px;
+  bottom: 17px;
+  width: 100px;
+  height: 150px;
+  animation: dog-4 3500ms ease-out infinite;
+}
+.dog-hp1 {
+  position: absolute;
+  background: url('../img/dogs/1.png') no-repeat;
+  width: image-width('../img/dogs/1.png');
+  height: image-height('../img/dogs/1.png');
+
+  bottom: 60px;
+  z-index: 5;
+
+  animation: dog-1 3000ms ease-out infinite;
+}
+.dog-hp2 {
+  position: absolute;
+  background: url('../img/dogs/2.png') no-repeat;
+  width: image-width('../img/dogs/2.png');
+  height: image-height('../img/dogs/2.png');
+
+  bottom: 0;
+  left: 15px;
+  z-index: 3;
+
+}
+.dog-hp3 {
+  position: absolute;
+  background: url('../img/dogs/3.png') no-repeat;
+  width: image-width('../img/dogs/3.png');
+  height: image-height('../img/dogs/3.png');
+
+  bottom: 0;
+  left: 6px;
+
+  animation: dog-2 800ms ease-out infinite;
+  transform-origin: 100% 100%;
+}
+
+.dog-2 {
+  position: absolute;
+  right: 20px;
+  bottom: 27px;
+  width: 100px;
+  height: 150px;
+  animation: dog-4 2500ms ease-out infinite;
+}
+
+.dog-hp4 {
+  position: absolute;
+  background: url('../img/dogs/4.png') no-repeat;
+  width: image-width('../img/dogs/4.png');
+  height: image-height('../img/dogs/4.png');
+
+  bottom: 56px;
+  left: 10px;
+  z-index: 5;
+
+  animation: dog-1 3500ms ease-out infinite;
+}
+.dog-hp5 {
+  position: absolute;
+  background: url('../img/dogs/5.png') no-repeat;
+  width: image-width('../img/dogs/5.png');
+  height: image-height('../img/dogs/5.png');
+
+  bottom: 0;
+  left: 15px;
+  z-index: 3;
+
+}
+.dog-hp6 {
+  position: absolute;
+  background: url('../img/dogs/6.png') no-repeat;
+  width: image-width('../img/dogs/6.png');
+  height: image-height('../img/dogs/6.png');
+
+  bottom: 11px;
+  left: 85px;
+
+  animation: dog-2 500ms ease-out infinite;
+  transform-origin: 100% 100%;
+}
+
+@keyframes dog-2 {
+  0% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+
+@keyframes dog-1 {
+  0% {
+    transform: rotate(20deg);
+  }
+
+  50% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes dog-4 {
+  0% {
+    transform: rotate(2deg) translate3D(10px,0px,0px);
+  }
+
+  50% {
+    transform: rotate(-2deg) translate3D(0px,0px,0px);;
+  }
+
+  100% {
+    transform: rotate(2deg) translate3D(10px,0px,0px);;
+  }
+}
