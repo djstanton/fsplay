@@ -70,6 +70,17 @@ fsgame = {
         7 : 56,
         8 : 54
     },
+    teamsConfig: {
+        1: 'Surf Rider',
+        2 : 'Лицо с обложки',
+        3 : 'Ёлочка',
+        4 : 'Лидер сайта',
+        5 : 'Свита',
+        6 : 'Голосование',
+        7 : 'Питомец',
+        8 : 'Встречи'
+    },
+    top: JSON.parse(localStorage.getItem('top')) || [],
     step: 0,
     gameInterval: 120000,
     coinInterval: 500,
@@ -147,38 +158,48 @@ fsgame = {
         if(_this.lockGame){
             return;
         }
+        var teamSelector = '.select-team-block-';
+        $(teamSelector+1).attr('data-is-selected',0);
         if(step && step == 1){
             switch (e.keyCode) {
                 case _this.keycodeConfig[1]:
                     _this.teamId = 1;
+                    $(teamSelector+1).attr('data-is-selected',1);
                     break;
                 case _this.keycodeConfig[2]:
                     _this.teamId = 2;
+                    $(teamSelector+2).attr('data-is-selected',1);
                     break;
                 case _this.keycodeConfig[3]:
                     _this.teamId = 3;
+                    $(teamSelector+3).attr('data-is-selected',1);
                     break;
                 case _this.keycodeConfig[4]:
                     _this.teamId = 4;
+                    $(teamSelector+4).attr('data-is-selected',1);
                     break;
                 case _this.keycodeConfig[5]:
                     _this.teamId = 5;
+                    $(teamSelector+5).attr('data-is-selected',1);
                     break;
                 case _this.keycodeConfig[6]:
                     _this.teamId = 6;
+                    $(teamSelector+6).attr('data-is-selected',1);
                     break;
                 case _this.keycodeConfig[7]:
                     _this.teamId = 7;
+                    $(teamSelector+7).attr('data-is-selected',1);
                     break;
                 case _this.keycodeConfig[8]:
                     _this.teamId = 8;
+                    $(teamSelector+8).attr('data-is-selected',1);
                     break;
                 default:
                     break;
             }
             if(_this.teamId){
-                _this.setActiveStep(2);
                 setTimeout(function(){
+                    _this.setActiveStep(2);
                     _this.play(_this.teamId);
                 }, 1000);
             }
@@ -243,7 +264,6 @@ fsgame = {
             _this.coinGenerator.collectedCoins = 0;
             _this.gameInterval = 120000;
             _this.currentHand = 0;
-            _this.teamId = 0;
             $(_this.scoreWrap).html('000000');
             _this.x2Timeout = setTimeout(function(){
                 _this.startX2();
@@ -251,6 +271,9 @@ fsgame = {
             _this.saleTimeout = setTimeout(function(){
                 _this.startSale();
             }, 45000);
+            _this.x2TimeoutLast = setTimeout(function(){
+                _this.startX2();
+            }, 90000);
             _this.playI = setInterval(function(){
                 _this.coinGenerator.makeCoin();
             }, _this.getRandomInt(((_this.x2 || _this.sale) ? 75 : 300), ((_this.x2 || _this.sale) ? 200 : 800)));
@@ -269,14 +292,43 @@ fsgame = {
         }, 3000);
 
     },
+    sortTop: function(){
+        var _this = this;
+        function compareCount(teamA, teamB) {
+            return teamA.count - teamB.count;
+        }
+        _this.top.sort(compareCount);
+        var tmpTop = [];
+        for(var i = 0; i < _this.top.length; i++) {
+            tmpTop.push(_this.top[i]);
+        }
+        _this.top = tmpTop;
+    },
+    cleanTop: function(){
+        localStorage.removeItem('top');
+    },
+    renderTop: function(){
+        var _this = this;
+        for(var i = 0; i < 3; i++) {
+            var topItem = $('.welcome-top-li').eq(i);
+            topItem.find('.welcome-top-team').text(_this.top[i] ? _this.teamsConfig[_this.top[i].teamId] : '-----');
+            topItem.find('.welcome-top-score').text(_this.top[i] ? _this.top[i].count : '');
+        }
+    },
     finish: function(){
-        var _this = this, rightHand = $('.man-hand-even'), leftHand = $('.man-hand-odd');
+        var _this = this, rightHand = $('.man-hand-even'), leftHand = $('.man-hand-odd'), team = _this.teamId, count = _this.coinGenerator.collectedCoins;
         $('body').append('<div class="result"><div class="result-text-shadow">Вы собрали '+_this.coinGenerator.collectedCoins+' ФМ </div> <div class="result-text"> Вы собрали '+_this.coinGenerator.collectedCoins+' ФМ</div></div>');
+        _this.top.push({ teamId: team, count: count});
+        localStorage.setItem('top', JSON.stringify(_this.top));
+
         _this.lockGame = true;
         _this.coinGenerator.collectedCoins = 0;
+        _this.renderTop();
         clearInterval(_this.playI);
         clearTimeout(_this.saleTimeout);
         clearTimeout(_this.x2Timeout);
+        clearTimeout(_this.x2TimeoutLast);
+
         $(_this.scoreWrap).html('000000');
         _this.currentHand = 0;
         $('.timer-text').html('120'.toString().toMMSS());
@@ -284,10 +336,12 @@ fsgame = {
         rightHand.attr('data-pos', -1);
         playTheme.stop();
         finishTheme.start();
+
         setTimeout(function(){
-            _this.setActiveStep(0);
+            location.reload();
             finishTheme.stop();
             mainTheme.start();
+            _this.renderTop();
             $('.result').fadeOut();
             _this.lockGame = false;
         }, 7000);
