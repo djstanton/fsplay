@@ -1,8 +1,9 @@
 $DONE_ANIMATION_TIME: 500ms;
+$FAIL_ANIMATION_TIME: 400ms;
 
 %done-bg {
-  background: -webkit-linear-gradient(left,  rgb(200,139,38) 0%,rgb(234,199,34) 42%,rgb(255,251,209) 74%,rgb(243,243,40) 100%);
-  background: linear-gradient(to right,  rgb(200,139,38) 0%,rgb(234,199,34) 42%,rgb(255,251,209) 74%,rgb(243,243,40) 100%);
+  background: -webkit-linear-gradient(left, rgb(200,139,38) 0%,rgb(234,199,34) 42%,rgb(255,251,209) 74%,rgb(243,243,40) 100%);
+  background: linear-gradient(to right, rgb(200,139,38) 0%,rgb(234,199,34) 42%,rgb(255,251,209) 74%,rgb(243,243,40) 100%);
 }
 
 .coin-done {
@@ -21,7 +22,6 @@ $DONE_ANIMATION_TIME: 500ms;
   height: $coinH;
   background: url('../img/test-coin.png');
   background-size: cover;
-  animation: coin-done-1 $DONE_ANIMATION_TIME linear forwards;
 }
 
 .coin-done-hp2 {
@@ -34,7 +34,6 @@ $DONE_ANIMATION_TIME: 500ms;
   margin: auto;
   @extend %done-bg;
   transform: scaleY(0);
-  animation: coin-done-2 $DONE_ANIMATION_TIME linear forwards;
 }
 
 .coin-done-hp3 {
@@ -46,7 +45,6 @@ $DONE_ANIMATION_TIME: 500ms;
   bottom: 0;
   border-radius: 50%;
   @extend %done-bg;
-  animation: coin-done-3 $DONE_ANIMATION_TIME linear forwards;
   opacity: 1;
 }
 
@@ -56,13 +54,34 @@ $DONE_ANIMATION_TIME: 500ms;
     display: none
   }
 }
-.coin[data-is-done="1"]{
 
-  .coin-hp2{ background: none}
-  .coin-hp2:after { background: none }
+.coin[data-is-done="1"]{
+  .coin-done-hp1{
+    animation: coin-done-1 $DONE_ANIMATION_TIME linear forwards;
+  }
+  .coin-done-hp2{
+    animation: coin-done-2 $DONE_ANIMATION_TIME linear forwards;
+  }
+  .coin-done-hp3{
+    animation: coin-done-3 $DONE_ANIMATION_TIME linear forwards;
+  }
 
   .coin-done {
     display: block
+  }
+
+  animation-play-state: paused !important;
+  background: none;
+
+  .coin-hp2{
+    animation-play-state: paused !important;
+    background: none;
+  }
+  .coin-hp2:after { background: none }
+
+  .coin-hp1{
+    animation-play-state: paused !important;
+    background: none;
   }
 }
 
@@ -109,4 +128,54 @@ $DONE_ANIMATION_TIME: 500ms;
   }
 }
 
+.coin[data-is-fail="1"][data-is-bomb="1"]{
+  .coin-done-hp1{
+    background: none;
+  }
+  .coin-done-hp1:after{
+    content: '';
+    display: block;
+    background: url('../img/test-bomb.png');
+    background-repeat: no-repeat;
+    background-size: 58px 77px;
+    width: 58px;
+    height: 77px;
+    position: absolute;
+    top: -22px;
+    right: -1px;
+  }
+}
 
+
+
+
+.coin[data-is-fail="1"]{
+  background: none;
+  .coin-hp2{
+    background: none;
+  }
+  .coin-hp1{
+    background: none;
+  }
+  .coin-hp2:after{
+    background: none;
+  }
+  .coin-done{
+    display: block;
+    animation: coin-fail-1 $FAIL_ANIMATION_TIME linear forwards;
+  }
+}
+
+@keyframes coin-fail-1 {
+  0% {
+    transform: rotate(0deg) scale(1);
+
+  }
+  50% {
+    transform: rotate(0deg) scale(0.5);
+
+  }
+  100% {
+    transform: rotate(360deg) scale(0);
+  }
+}

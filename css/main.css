@@ -1274,58 +1274,40 @@ body:after {
   background: none;
 }
 
-/* line 41, ../sass/_conis_boom.scss */
-.coin[data-is-done="1"] {
-  animation-play-state: paused !important;
-  background: none;
-}
-
-/* line 46, ../sass/_conis_boom.scss */
-.coin[data-is-done="1"] .coin-hp2 {
-  animation-play-state: paused !important;
-  background: none;
-}
-
-/* line 50, ../sass/_conis_boom.scss */
-.coin[data-is-done="1"] .coin-hp1 {
-  animation-play-state: paused !important;
-  background: none;
-}
-
-/* line 56, ../sass/_conis_boom.scss */
+/* line 42, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-core {
   display: block;
   animation: coin-hide 500ms linear forwards;
 }
-/* line 60, ../sass/_conis_boom.scss */
+/* line 46, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-1 {
   animation: coin-collect-1 500ms linear forwards;
 }
-/* line 63, ../sass/_conis_boom.scss */
+/* line 49, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-2 {
   animation: coin-collect-2 500ms linear forwards;
 }
-/* line 66, ../sass/_conis_boom.scss */
+/* line 52, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-3 {
   animation: coin-collect-3 500ms linear forwards;
 }
-/* line 69, ../sass/_conis_boom.scss */
+/* line 55, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-4 {
   animation: coin-collect-4 500ms linear forwards;
 }
-/* line 72, ../sass/_conis_boom.scss */
+/* line 58, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-5 {
   animation: coin-collect-5 500ms linear forwards;
 }
-/* line 75, ../sass/_conis_boom.scss */
+/* line 61, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-6 {
   animation: coin-collect-6 500ms linear forwards;
 }
-/* line 78, ../sass/_conis_boom.scss */
+/* line 64, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-7 {
   animation: coin-collect-7 500ms linear forwards;
 }
-/* line 81, ../sass/_conis_boom.scss */
+/* line 67, ../sass/_conis_boom.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-boom-8 {
   animation: coin-collect-8 500ms linear forwards;
 }
@@ -1446,13 +1428,13 @@ body:after {
   border: 4px solid #f6ab35;
 }
 
-/* line 3, ../sass/_coin_done.scss */
+/* line 4, ../sass/_coin_done.scss */
 .coin-done-hp2, .coin-done-hp3 {
   background: -webkit-linear-gradient(left, #c88b26 0%, #eac722 42%, #fffbd1 74%, #f3f328 100%);
   background: linear-gradient(to right, #c88b26 0%, #eac722 42%, #fffbd1 74%, #f3f328 100%);
 }
 
-/* line 8, ../sass/_coin_done.scss */
+/* line 9, ../sass/_coin_done.scss */
 .coin-done {
   position: absolute;
   display: none;
@@ -1461,7 +1443,7 @@ body:after {
   height: 55px;
 }
 
-/* line 16, ../sass/_coin_done.scss */
+/* line 17, ../sass/_coin_done.scss */
 .coin-done-hp1 {
   position: absolute;
   z-index: 2;
@@ -1470,7 +1452,6 @@ body:after {
   height: 55px;
   background: url("../img/test-coin.png");
   background-size: cover;
-  animation: coin-done-1 500ms linear forwards;
 }
 
 /* line 27, ../sass/_coin_done.scss */
@@ -1483,10 +1464,9 @@ body:after {
   background-image: linear-gradient();
   margin: auto;
   transform: scaleY(0);
-  animation: coin-done-2 500ms linear forwards;
 }
 
-/* line 40, ../sass/_coin_done.scss */
+/* line 39, ../sass/_coin_done.scss */
 .coin-done-hp3 {
   width: 55px;
   height: 55px;
@@ -1495,26 +1475,48 @@ body:after {
   top: 0;
   bottom: 0;
   border-radius: 50%;
-  animation: coin-done-3 500ms linear forwards;
   opacity: 1;
 }
 
-/* line 55, ../sass/_coin_done.scss */
+/* line 53, ../sass/_coin_done.scss */
 .coin[data-is-done="1"][data-is-bomb="1"] .coin-done {
   display: none;
 }
 
-/* line 61, ../sass/_coin_done.scss */
-.coin[data-is-done="1"] .coin-hp2 {
+/* line 58, ../sass/_coin_done.scss */
+.coin[data-is-done="1"] {
+  animation-play-state: paused !important;
   background: none;
 }
+/* line 59, ../sass/_coin_done.scss */
+.coin[data-is-done="1"] .coin-done-hp1 {
+  animation: coin-done-1 500ms linear forwards;
+}
 /* line 62, ../sass/_coin_done.scss */
+.coin[data-is-done="1"] .coin-done-hp2 {
+  animation: coin-done-2 500ms linear forwards;
+}
+/* line 65, ../sass/_coin_done.scss */
+.coin[data-is-done="1"] .coin-done-hp3 {
+  animation: coin-done-3 500ms linear forwards;
+}
+/* line 69, ../sass/_coin_done.scss */
+.coin[data-is-done="1"] .coin-done {
+  display: block;
+}
+/* line 76, ../sass/_coin_done.scss */
+.coin[data-is-done="1"] .coin-hp2 {
+  animation-play-state: paused !important;
+  background: none;
+}
+/* line 80, ../sass/_coin_done.scss */
 .coin[data-is-done="1"] .coin-hp2:after {
   background: none;
 }
-/* line 64, ../sass/_coin_done.scss */
-.coin[data-is-done="1"] .coin-done {
-  display: block;
+/* line 82, ../sass/_coin_done.scss */
+.coin[data-is-done="1"] .coin-hp1 {
+  animation-play-state: paused !important;
+  background: none;
 }
 
 @keyframes coin-done-1 {
@@ -1551,5 +1553,56 @@ body:after {
   }
   100% {
     transform: translate3D(0, 32.5px, 0) scaleY(0);
+  }
+}
+/* line 132, ../sass/_coin_done.scss */
+.coin[data-is-fail="1"][data-is-bomb="1"] .coin-done-hp1 {
+  background: none;
+}
+/* line 135, ../sass/_coin_done.scss */
+.coin[data-is-fail="1"][data-is-bomb="1"] .coin-done-hp1:after {
+  content: '';
+  display: block;
+  background: url("../img/test-bomb.png");
+  background-repeat: no-repeat;
+  background-size: 58px 77px;
+  width: 58px;
+  height: 77px;
+  position: absolute;
+  top: -22px;
+  right: -1px;
+}
+
+/* line 152, ../sass/_coin_done.scss */
+.coin[data-is-fail="1"] {
+  background: none;
+}
+/* line 154, ../sass/_coin_done.scss */
+.coin[data-is-fail="1"] .coin-hp2 {
+  background: none;
+}
+/* line 157, ../sass/_coin_done.scss */
+.coin[data-is-fail="1"] .coin-hp1 {
+  background: none;
+}
+/* line 160, ../sass/_coin_done.scss */
+.coin[data-is-fail="1"] .coin-hp2:after {
+  background: none;
+}
+/* line 163, ../sass/_coin_done.scss */
+.coin[data-is-fail="1"] .coin-done {
+  display: block;
+  animation: coin-fail-1 400ms linear forwards;
+}
+
+@keyframes coin-fail-1 {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(0deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(0);
   }
 }
